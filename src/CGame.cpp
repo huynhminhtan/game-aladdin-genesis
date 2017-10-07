@@ -214,7 +214,7 @@ void CGame::Run()
 		// update scene after process input
 		CManagerScene::GetInstance()->Update(_DeltaTime);
 
-	}
+	};
 
 	trace(L"Main game loop has ended");
 }

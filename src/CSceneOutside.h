@@ -4,6 +4,8 @@
 
 #define SPRITE_TITLE L"kitty_right.bmp"
 #define SPRITE_TITLE_BACKGROUND L"background_aladdin.png"
+#define SPRITE_TITLE_ALADDIN L"sprite_aladdin.bmp"
+#define SPRITE_TITLE_ALADDIN_XML "sprite_aladdin.xml"
 
 class CSceneOutSide :public CScene
 {
@@ -25,7 +27,10 @@ private:
 	LPD3DXSPRITE		_SpriteHandler;
 
 	// background
-	CAnimationSprite*	_aspBackground;
+	CSprite*			_SpriteBackground;
+
+	// aladdin
+	CAnimationSprite*	_AspAladdin;
 
 	float				_PosBackGround_X;
 };

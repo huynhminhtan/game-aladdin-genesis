@@ -16,6 +16,9 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{5ab77343-83eb-4881-b21b-c1193fc67870}</UniqueIdentifier>
     </Filter>
+    <Filter Include="TinyXML">
+      <UniqueIdentifier>{108c77b6-4f90-43b0-9210-29fd09226858}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\CGame.h">
@@ -48,6 +51,12 @@
     <ClInclude Include="..\src\CInput.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="..\lib\tinyxml\tinystr.h">
+      <Filter>TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\lib\tinyxml\tinyxml.h">
+      <Filter>TinyXML</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\CGame.cpp">
@@ -76,6 +85,18 @@
     </ClCompile>
     <ClCompile Include="..\src\CInput.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\tinyxml\tinystr.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\tinyxml\tinyxml.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\tinyxml\tinyxmlerror.cpp">
+      <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\lib\tinyxml\tinyxmlparser.cpp">
+      <Filter>TinyXML</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

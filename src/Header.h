@@ -8,6 +8,13 @@
 #include <d3dx9.h>
 #include <dinput.h>
 
+// include lib extend
+#include "tinyxml.h"
+
+// include lib STL
+#include <list>
+using namespace std;
+
 // include component game
 #include "CScene.h"
 
@@ -21,3 +28,4 @@
 #include "CInput.h"
 
 #include "trace.h"
+
