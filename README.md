@@ -1,2 +1,2 @@
-# [NMCNPM] Aladin Game Genesis
+# [NMCNPM] Aladdin Game Genesis
 
