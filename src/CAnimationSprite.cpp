@@ -148,8 +148,6 @@ void CAnimationSprite::Render(float X, float Y, int Left, int Top, int Width, in
 
 	_SpriteHandler->End();
 
-
-
 }
 
 void CAnimationSprite::Render(float X, float Y, float ScaleSize, int AnamationRate, DIRECTION direction)
@@ -186,13 +184,16 @@ void CAnimationSprite::Render(float X, float Y, float ScaleSize, int AnamationRa
 	srect.bottom = srect.top + l_front->GETLocaTionTile().bottom;
 	srect.right = srect.left + l_front->GETLocaTionTile().right;
 
+	// get point center of sprite
+	D3DXVECTOR3 center = D3DXVECTOR3((srect.right - srect.left) / 2, (srect.bottom - srect.top) / 2, 0);
+
 	//  rander
 	_SpriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 
 	_SpriteHandler->Draw(
 		_Texture,
 		&srect, // NULL get full _Texture
-		NULL,
+		&center, // NULL
 		NULL,//&position, //  apply scale
 		D3DCOLOR_XRGB(255, 255, 255)
 	);

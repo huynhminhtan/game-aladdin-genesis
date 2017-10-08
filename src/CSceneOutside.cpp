@@ -60,7 +60,7 @@ void CSceneOutSide::Update(float dt)
 void CSceneOutSide::Render()
 {
 	// render background
-	_SpriteBackground->Render(0, 0, (int)_PosBackGround_X, 190, 1024, 640, 1.3);
+	_SpriteBackground->Render(0, 0, (int)_PosBackGround_X, 420, 1024, 640, 2.4);
 	//_SpriteBackground->Render(0, 0, 1.3);
 
 	switch (_StateAladdin)

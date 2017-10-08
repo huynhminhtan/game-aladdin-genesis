@@ -25,5 +25,5 @@ void CAladdinWalk::Release()
 void CAladdinWalk::Activities(STATE state, DIRECTION direction)
 {
 	// render animation sprite Aladdin
-	_AspAladdin->Render(350, 450, 3, 2, direction);
+	_AspAladdin->Render(350, 420, 2.6, 1, direction);
 }

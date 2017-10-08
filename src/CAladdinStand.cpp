@@ -27,5 +27,5 @@ void CAladdinStand::Activities(STATE state, DIRECTION direction)
 {
 	//
 	// render animation sprite Aladdin
-		_AspAladdin->Render(350, 450, 3, 15, direction);
+		_AspAladdin->Render(350, 420, 2.6, 15, direction);
 }
