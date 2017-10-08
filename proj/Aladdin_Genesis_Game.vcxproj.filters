@@ -19,6 +19,15 @@
     <Filter Include="TinyXML">
       <UniqueIdentifier>{108c77b6-4f90-43b0-9210-29fd09226858}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Object">
+      <UniqueIdentifier>{e454ec48-c313-4272-a33d-68063b634d3a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Aladdin">
+      <UniqueIdentifier>{0f4fd6e5-a1da-4785-9b62-3275e67a8e1d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Object\Aladdin\AladinState">
+      <UniqueIdentifier>{274c363f-6a8d-45a8-92f4-eb43b5ad4864}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\CGame.h">
@@ -56,6 +65,21 @@
     </ClInclude>
     <ClInclude Include="..\lib\tinyxml\tinyxml.h">
       <Filter>TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CAladdin.h">
+      <Filter>Object\Aladdin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CAladdinAction.h">
+      <Filter>Object\Aladdin</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CAladdinStand.h">
+      <Filter>Object\Aladdin\AladinState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\Global.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\CAladdinWalk.h">
+      <Filter>Object\Aladdin\AladinState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +121,21 @@
     </ClCompile>
     <ClCompile Include="..\lib\tinyxml\tinyxmlparser.cpp">
       <Filter>TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CAladdin.cpp">
+      <Filter>Object\Aladdin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CAladdinAction.cpp">
+      <Filter>Object\Aladdin</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CAladdinStand.cpp">
+      <Filter>Object\Aladdin\AladinState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\Global.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\CAladdinWalk.cpp">
+      <Filter>Object\Aladdin\AladinState</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

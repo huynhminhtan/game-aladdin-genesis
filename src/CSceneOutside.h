@@ -1,11 +1,7 @@
 #pragma once
 
 #include "Header.h"
-
-#define SPRITE_TITLE L"kitty_right.bmp"
-#define SPRITE_TITLE_BACKGROUND L"background_aladdin.png"
-#define SPRITE_TITLE_ALADDIN L"sprite_aladdin.bmp"
-#define SPRITE_TITLE_ALADDIN_XML "sprite_aladdin.xml"
+#include "CAladdin.h"
 
 class CSceneOutSide :public CScene
 {
@@ -26,11 +22,11 @@ private:
 
 	LPD3DXSPRITE		_SpriteHandler;
 
-	// background
-	CSprite*			_SpriteBackground;
+	CSprite*			_SpriteBackground; 
 
-	// aladdin
-	CAnimationSprite*	_AspAladdin;
+	CAladdin*			_Aladdin;
+	STATE				_StateAladdin;
+	DIRECTION			_DirectionAladdin;
 
 	float				_PosBackGround_X;
 };

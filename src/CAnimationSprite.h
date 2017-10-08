@@ -32,8 +32,9 @@ public:
 
 	// Render sprite (x,y,width,height) at location (X, Y) in backbuffer 
 	void Render(float, float, int, int, int, int, float);
-	// Render full sprite at location (X, Y) in backbuffer 
-	void Render(float X, float Y, float Scale);
+	// Render full sprite at location (X, Y) in backbuffer
+	// X; Y; Scale; AnimationRate; Direction
+	void Render(float sX, float Y, float Scale, int AnamationRate, DIRECTION direction);
 
 	void Release();
 
@@ -45,7 +46,7 @@ private:
 
 	int						_IndexTile;
 
-	int						_FPS;
+	int						_AnimationRate_Index;
 
 	// texture store sprite sheet
 	LPDIRECT3DTEXTURE9		_Texture;

@@ -137,8 +137,12 @@ void CGame::_InitDirectX()
 
 	if (_d3ddv == NULL)
 	{
-
+		MessageBox(NULL, L"Can't create Direct Device", L"Error", MB_OK | MB_ERR_INVALID_CHARS);
+		return;
 	}
+
+	// store _d3ddv to class Global
+	Global::GetInstance()->SetDirectDevice(_d3ddv);
 
 	_d3ddv->GetBackBuffer(0, 0, D3DBACKBUFFER_TYPE_MONO, &_BackBuffer);
 }

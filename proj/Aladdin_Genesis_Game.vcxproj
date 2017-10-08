@@ -21,6 +21,10 @@
   <ItemGroup>
     <ClInclude Include="..\lib\tinyxml\tinystr.h" />
     <ClInclude Include="..\lib\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\src\CAladdin.h" />
+    <ClInclude Include="..\src\CAladdinAction.h" />
+    <ClInclude Include="..\src\CAladdinStand.h" />
+    <ClInclude Include="..\src\CAladdinWalk.h" />
     <ClInclude Include="..\src\CAnimationSprite.h" />
     <ClInclude Include="..\src\CGame.h" />
     <ClInclude Include="..\src\CInput.h" />
@@ -28,6 +32,7 @@
     <ClInclude Include="..\src\CScene.h" />
     <ClInclude Include="..\src\CSceneOutside.h" />
     <ClInclude Include="..\src\CSprite.h" />
+    <ClInclude Include="..\src\Global.h" />
     <ClInclude Include="..\src\Header.h" />
     <ClInclude Include="..\src\trace.h" />
     <ClInclude Include="..\src\utils.h" />
@@ -37,12 +42,17 @@
     <ClCompile Include="..\lib\tinyxml\tinyxml.cpp" />
     <ClCompile Include="..\lib\tinyxml\tinyxmlerror.cpp" />
     <ClCompile Include="..\lib\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\src\CAladdin.cpp" />
+    <ClCompile Include="..\src\CAladdinAction.cpp" />
+    <ClCompile Include="..\src\CAladdinStand.cpp" />
+    <ClCompile Include="..\src\CAladdinWalk.cpp" />
     <ClCompile Include="..\src\CAnimationSprite.cpp" />
     <ClCompile Include="..\src\CGame.cpp" />
     <ClCompile Include="..\src\CInput.cpp" />
     <ClCompile Include="..\src\CManagerScene.cpp" />
     <ClCompile Include="..\src\CSceneOutside.cpp" />
     <ClCompile Include="..\src\CSprite.cpp" />
+    <ClCompile Include="..\src\Global.cpp" />
     <ClCompile Include="..\src\MainPrg.cpp" />
     <ClCompile Include="..\src\trace.cpp" />
     <ClCompile Include="..\src\utils.cpp" />

@@ -7,7 +7,7 @@ CAnimationSprite::CAnimationSprite(LPDIRECT3DDEVICE9 d3ddv)
 	_d3ddv = d3ddv;
 	//_info
 	_IndexTile = 0;
-	_FPS = 0;
+	_AnimationRate_Index = 0;
 }
 
 CAnimationSprite::~CAnimationSprite()
@@ -152,8 +152,10 @@ void CAnimationSprite::Render(float X, float Y, int Left, int Top, int Width, in
 
 }
 
-void CAnimationSprite::Render(float X, float Y, float ScaleSize)
+void CAnimationSprite::Render(float X, float Y, float ScaleSize, int AnamationRate, DIRECTION direction)
 {
+	float tempReverse = (direction == DIRECTION::LEFT) ? -1 : 1;
+
 	D3DXMATRIX Combined;
 
 	D3DXMATRIX Scale;
@@ -165,7 +167,7 @@ void CAnimationSprite::Render(float X, float Y, float ScaleSize)
 	// set location
 	D3DXVECTOR3 position((float)X, (float)Y, 0);
 	// Scale the sprite.
-	D3DXMatrixScaling(&Scale, ScaleSize, ScaleSize, ScaleSize);
+	D3DXMatrixScaling(&Scale, tempReverse*ScaleSize, ScaleSize, ScaleSize);
 	Combined *= Scale;
 	// Translate the sprite
 	D3DXMatrixTranslation(&Translate, X, Y, 0.0f);
@@ -197,13 +199,13 @@ void CAnimationSprite::Render(float X, float Y, float ScaleSize)
 
 	_SpriteHandler->End();
 
-	if (_FPS > 20)
+	if (_AnimationRate_Index > AnamationRate)
 	{
 		_IndexTile = ((_IndexTile + 1) % _ListTile.size());
-		_FPS = 0;
+		_AnimationRate_Index = 0;
 	}
 
-	_FPS++;
+	_AnimationRate_Index++;
 
 }
 

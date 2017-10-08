@@ -3,10 +3,12 @@
 CSceneOutSide::CSceneOutSide()
 {
 	_PosBackGround_X = 0;
-	_AspAladdin = nullptr;
+	//_AspAladdin = nullptr;
 	_SpriteBackground = nullptr;
 	//_SpriteHandler
-
+	_Aladdin = nullptr;
+	_StateAladdin = STATE::STAND;
+	_DirectionAladdin = DIRECTION::RIGHT;
 }
 
 CSceneOutSide::~CSceneOutSide()
@@ -21,23 +23,36 @@ void CSceneOutSide::Init(LPDIRECT3DDEVICE9 d3ddv)
 	// load sprite
 	_SpriteBackground->Load(SPRITE_TITLE_BACKGROUND, D3DCOLOR_XRGB(0, 0, 255));
 
-	// init animation sprite
-	_AspAladdin = new CAnimationSprite(d3ddv);
-	_AspAladdin->Init();
-	// load sprite
-	_AspAladdin->Load(SPRITE_TITLE_ALADDIN, SPRITE_TITLE_ALADDIN_XML, D3DCOLOR_XRGB(255, 0, 255));
+	_Aladdin = new CAladdin();
+	// init Aladdin
+	_Aladdin->Init();
 }
 
 void CSceneOutSide::Update(float dt)
 {
 	if (CInput::GetInstance()->IsKeyDown(DIK_RIGHT))
 	{
+		// translate background
 		_PosBackGround_X += 0.1 * dt;
+
+		// set state Aladdin
+		_StateAladdin = STATE::WALK;
+		_DirectionAladdin = DIRECTION::RIGHT;
 	}
+	else
+	{
+		_StateAladdin = STATE::STAND;
+	}
+
 
 	if (CInput::GetInstance()->IsKeyDown(DIK_LEFT))
 	{
+		// translate background
 		_PosBackGround_X -= 0.1 * dt;
+
+		// set state Aladdin
+		_StateAladdin = STATE::WALK;
+		_DirectionAladdin = DIRECTION::LEFT;
 	}
 
 }
@@ -48,14 +63,23 @@ void CSceneOutSide::Render()
 	_SpriteBackground->Render(0, 0, (int)_PosBackGround_X, 190, 1024, 640, 1.3);
 	//_SpriteBackground->Render(0, 0, 1.3);
 
-	// render animation sprite Aladdin
-	_AspAladdin->Render(100, 450, 3);
-	
+	switch (_StateAladdin)
+	{
+	case  (STATE::WALK):
+		_Aladdin->Activities(STATE::WALK, _DirectionAladdin);
+		break;
+	case  (STATE::STAND):
+		_Aladdin->Activities(STATE::STAND, _DirectionAladdin);
+		break;
+	}
+
 }
 
 void CSceneOutSide::Destroy()
 {
 	_SpriteBackground->Release();
+
+	_Aladdin->Release();
 }
 
 void CSceneOutSide::OnKeyDown(int KeyCode)

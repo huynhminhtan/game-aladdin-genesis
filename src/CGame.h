@@ -27,7 +27,7 @@
 
 class CGame
 {
-protected:
+private:
 	LPDIRECT3D9			_d3d;		// the pointer to our Direct3D interface
 	LPDIRECT3DDEVICE9	_d3ddv;		// the pointer to the device class
 	LPDIRECT3DSURFACE9	_BackBuffer;
