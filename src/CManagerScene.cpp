@@ -51,9 +51,9 @@ void CManagerScene::OnKeyDown(int KeyCode)
 	_sceneCurrent->OnKeyDown(KeyCode);
 }
 
-void CManagerScene::OnKeyUP(int KeyCode)
+void CManagerScene::OnKeyUp(int KeyCode)
 {
-	_sceneCurrent->OnKeyUP(KeyCode);
+	_sceneCurrent->OnKeyUp(KeyCode);
 }
 
 CManagerScene* CManagerScene::GetInstance()

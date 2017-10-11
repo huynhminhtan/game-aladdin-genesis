@@ -92,7 +92,7 @@ void CSceneOutSide::OnKeyDown(int KeyCode)
 	}*/
 }
 
-void CSceneOutSide::OnKeyUP(int KeyCode)
+void CSceneOutSide::OnKeyUp(int KeyCode)
 {
 	/*switch (KeyCode)
 	{

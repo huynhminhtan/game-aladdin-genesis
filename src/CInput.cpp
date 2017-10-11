@@ -116,7 +116,7 @@ void CInput::ProcessKeyBoard()
 		if ((KeyState & 0x80) > 0)
 			CManagerScene::GetInstance()->OnKeyDown(KeyCode);
 		else
-			CManagerScene::GetInstance()->OnKeyUP(KeyCode);
+			CManagerScene::GetInstance()->OnKeyUp(KeyCode);
 
 	}
 

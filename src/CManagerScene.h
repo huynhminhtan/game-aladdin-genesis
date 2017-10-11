@@ -18,7 +18,7 @@ public:
 
 	// event key press
 	void OnKeyDown(int);
-	void OnKeyUP(int);
+	void OnKeyUp(int);
 
 	static CManagerScene* GetInstance();
 

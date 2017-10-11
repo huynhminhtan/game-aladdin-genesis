@@ -16,7 +16,7 @@ public:
 
 	// event key press / short time
 	void OnKeyDown(int);
-	void OnKeyUP(int);
+	void OnKeyUp(int);
 
 private:
 

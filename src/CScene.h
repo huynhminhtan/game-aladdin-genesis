@@ -10,5 +10,5 @@ public:
 	virtual void Destroy() = 0;
 
 	virtual void OnKeyDown(int) = 0;
-	virtual void OnKeyUP(int) = 0;
+	virtual void OnKeyUp(int) = 0;
 };
