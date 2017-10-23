@@ -28,6 +28,9 @@
     <Filter Include="Object\Aladdin\AladinState">
       <UniqueIdentifier>{274c363f-6a8d-45a8-92f4-eb43b5ad4864}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{fa4b940e-2a03-4729-9239-87933d855faf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\CGame.h">
@@ -80,6 +83,15 @@
     </ClInclude>
     <ClInclude Include="..\src\CAladdinWalk.h">
       <Filter>Object\Aladdin\AladinState</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\quadtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\sweptaabb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\gameobject.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +148,15 @@
     </ClCompile>
     <ClCompile Include="..\src\CAladdinWalk.cpp">
       <Filter>Object\Aladdin\AladinState</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\quadtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\sweptaabb.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\gameobject.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -32,8 +32,11 @@
     <ClInclude Include="..\src\CScene.h" />
     <ClInclude Include="..\src\CSceneOutside.h" />
     <ClInclude Include="..\src\CSprite.h" />
+    <ClInclude Include="..\src\gameobject.h" />
     <ClInclude Include="..\src\Global.h" />
     <ClInclude Include="..\src\Header.h" />
+    <ClInclude Include="..\src\quadtree.h" />
+    <ClInclude Include="..\src\sweptaabb.h" />
     <ClInclude Include="..\src\trace.h" />
     <ClInclude Include="..\src\utils.h" />
   </ItemGroup>
@@ -52,8 +55,11 @@
     <ClCompile Include="..\src\CManagerScene.cpp" />
     <ClCompile Include="..\src\CSceneOutside.cpp" />
     <ClCompile Include="..\src\CSprite.cpp" />
+    <ClCompile Include="..\src\gameobject.cpp" />
     <ClCompile Include="..\src\Global.cpp" />
     <ClCompile Include="..\src\MainPrg.cpp" />
+    <ClCompile Include="..\src\quadtree.cpp" />
+    <ClCompile Include="..\src\sweptaabb.cpp" />
     <ClCompile Include="..\src\trace.cpp" />
     <ClCompile Include="..\src\utils.cpp" />
   </ItemGroup>
