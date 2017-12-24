@@ -8,6 +8,7 @@
 #include "Graphics.h"
 #include "../GameObjects/Camera.h"
 #include "Timer.h"
+#include "GameTime.h"
 
 class Game
 {
@@ -22,6 +23,10 @@ private:
 	Input* _input;
 	Graphics* _graphics;
 	Timer* _timer;
+	GameTime* _gametime;
+	float _oldTime;
+	float _deltaTime;
+	float _frameRate;
 
 	bool Frame(float detaTime);
 	bool InitializeWindows(int &screenWidth, int &screenHeight);
