@@ -1,4 +1,4 @@
-#include "Game.h"
+﻿#include "Game.h"
 #include "SceneManager.h"
 #include "../Scenes/MainScene.h"
 #include "../Scenes/JafarScene.h"
@@ -14,6 +14,7 @@ Game::Game(LPCWSTR applicationName, float fps, bool isFullScreen)
 	this->_input = 0;
 	this->_graphics = 0;
 	this->_timer = 0;
+	this->_gametime = GameTime::getInstance();
 }
 
 Game::~Game()
@@ -77,6 +78,13 @@ bool Game::Initialize()
 	// init rand
 	srand(time(0));
 
+	_gametime->init();
+
+	_oldTime = _gametime->getTotalGameTime();
+	_deltaTime = 0.0f;
+
+	this->_frameRate = 1000.0f / 60;
+
 	return true;
 }
 
@@ -115,15 +123,12 @@ void Game::Run()
 	// Initialize the message structure.
 	ZeroMemory(&msg, sizeof(MSG));
 
-	float tickPerFrame = 1.0f / _fps, delta = 0;
 
 	// Loop until there is a quit message from the window or the user.
 	done = false;
 	while (!done)
 	{
 		// Start timer
-		Timer::GetInstance()->StartCounter();
-
 		// Handle the windows messages.
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
@@ -137,26 +142,34 @@ void Game::Run()
 			DispatchMessage(&msg);
 		}
 
-		delta += Timer::GetInstance()->GetCouter();
+		_gametime->updateGameTime();							// gametime isn't run if dont call updateGameTime
+		_deltaTime = _gametime->getTotalGameTime() - _oldTime;
 
-		if (delta >= tickPerFrame)
+
+		if (_deltaTime >= _frameRate)
 		{
-			// Otherwise do the frame processing.  If frame processing fails then exit.
-			result = Frame(delta);
+			_oldTime += _frameRate;
+
+			// render
+			float time = _gametime->getElapsedGameTime();
+			// để xử lý kéo cửa sổ không vị dồn frame
+			// vì chỉ là thủ thuật set cứng thời gian
+			// nên bất kỳ đối tượng nào không update theo thời gian thì khi kéo cửa sổ sẽ bị dồn frame
+			if (time > this->_frameRate*2)
+			{
+				time = _frameRate;
+			}
+
+			result = Frame(time / 200.0f);
+
 			if (!result)
 			{
 				MessageBox(this->_hWnd, L"Frame Processing Failed", L"Error", MB_OK);
 				done = true;
 			}
-
-
-			delta = 0;
 		}
 		else
-		{
-			Sleep(tickPerFrame - delta);
-			delta = tickPerFrame;
-		}
+			Sleep(_frameRate - _deltaTime);	//sleep every frame for high performance
 
 		if (_input->IsKeyPressed(DIK_ESCAPE))
 			done = true;
@@ -247,7 +260,7 @@ bool Game::InitializeWindows(int & screenWidth, int & screenHeight)
 	// Determine the resolution of the clients desktop screen.
 	screenWidth = GetSystemMetrics(SM_CXSCREEN);
 	screenHeight = GetSystemMetrics(SM_CYSCREEN);
-	
+
 	// Setup the screen settings depending on whether it is running in full screen or in windowed mode.
 	if (this->_isFullScreen)
 	{
@@ -275,7 +288,7 @@ bool Game::InitializeWindows(int & screenWidth, int & screenHeight)
 		posX = (GetSystemMetrics(SM_CXSCREEN) - screenWidth) / 2;
 		posY = (GetSystemMetrics(SM_CYSCREEN) - screenHeight) / 2;
 	}
-	
+
 
 	// Create the window with the screen settings and get the handle to it.
 	this->_hWnd = CreateWindow(this->_applicationName, this->_applicationName, WS_OVERLAPPEDWINDOW, posX, posY, screenWidth, screenHeight, NULL, NULL, this->_hInstance, NULL);

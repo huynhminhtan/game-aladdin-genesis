@@ -27,5 +27,6 @@ public:
 	std::wstring GetString();
 	void SetString(std::wstring value);
 	void SetString(int value);
+	void SetString(double value);
 };
 

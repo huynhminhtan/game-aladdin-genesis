@@ -408,6 +408,12 @@
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp">
       <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClCompile>
+    <ClCompile Include="GameComponents\TimeSpan.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\GameTime.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -742,6 +748,15 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h">
       <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\GameTime.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\TimeSpan.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\define.h">
+      <Filter>GameComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

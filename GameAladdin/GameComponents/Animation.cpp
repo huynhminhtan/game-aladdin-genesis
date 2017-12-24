@@ -52,7 +52,7 @@ Animation::Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LP
 
 	//set RECT
 	_sourceRect = _listRectSprites[_currentIndex];
-
+	
 	_timePerFrame = timePerFrame;
 	_currentIndex = 0;
 	_currentTotalTime = 0;

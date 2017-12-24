@@ -64,3 +64,8 @@ void Text::SetString(int value)
 {
 	_string = std::to_wstring(value);
 }
+
+void Text::SetString(double value)
+{
+	_string = std::to_wstring(value);
+}

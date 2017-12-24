@@ -156,6 +156,7 @@
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
+    <ClCompile Include="GameComponents\GameTime.cpp" />
     <ClCompile Include="GameComponents\Graphics.cpp" />
     <ClCompile Include="GameComponents\Input.cpp" />
     <ClCompile Include="GameComponents\QuadTree.cpp" />
@@ -168,6 +169,7 @@
     <ClCompile Include="GameComponents\GameMap.cpp" />
     <ClCompile Include="GameComponents\Text.cpp" />
     <ClCompile Include="GameComponents\Timer.cpp" />
+    <ClCompile Include="GameComponents\TimeSpan.cpp" />
     <ClCompile Include="GameObjects\Camera.cpp" />
     <ClCompile Include="GameObjects\Enemies\BossJafar\Jafar.cpp" />
     <ClCompile Include="GameObjects\Enemies\BossJafar\JafarAttack.cpp" />
@@ -268,7 +270,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h" />
+    <ClInclude Include="GameComponents\define.h" />
     <ClInclude Include="GameComponents\GameCollision.h" />
+    <ClInclude Include="GameComponents\GameTime.h" />
     <ClInclude Include="GameComponents\Graphics.h" />
     <ClInclude Include="GameComponents\Input.h" />
     <ClInclude Include="GameComponents\QuadTree.h" />
@@ -281,6 +285,7 @@
     <ClInclude Include="GameComponents\GameMap.h" />
     <ClInclude Include="GameComponents\Text.h" />
     <ClInclude Include="GameComponents\Timer.h" />
+    <ClInclude Include="GameComponents\TimeSpan.h" />
     <ClInclude Include="GameObjects\Camera.h" />
     <ClInclude Include="GameObjects\Enemies\BossJafar\Jafar.h" />
     <ClInclude Include="GameObjects\Enemies\BossJafar\JafarAttack.h" />
