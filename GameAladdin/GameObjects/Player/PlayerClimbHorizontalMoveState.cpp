@@ -35,7 +35,7 @@ void PlayerClimbHorizontalMoveState::Update(float deltaTime)
 	}
 
 	//check if at the left or right of bar || press D
-	if (Input::GetInstance()->IsKeyPressed(DIK_D) || _player->GetPosition().x < _horizontalBar->GetBound().left || _player->GetPosition().x > _horizontalBar->GetBound().right)
+	if (Input::GetInstance()->IsKeyPressed(DIK_C) || _player->GetPosition().x < _horizontalBar->GetBound().left || _player->GetPosition().x > _horizontalBar->GetBound().right)
 	{
 		//move player out of horizontal-bar (prevent loop idle->fall->idle)
 		PlayerState *newState = new PlayerFallState(_player);

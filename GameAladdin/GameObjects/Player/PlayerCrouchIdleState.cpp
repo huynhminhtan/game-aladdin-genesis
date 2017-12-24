@@ -39,13 +39,13 @@ void PlayerCrouchIdleState::Update(float deltaTime)
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_D))
+	if (Input::GetInstance()->IsKeyPressed(DIK_C))
 	{
 		_player->SetState(new PlayerJumpState(_player));
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_S))
+	if (Input::GetInstance()->IsKeyPressed(DIK_X))
 	{
 		_player->SetState(new PlayerCrouchAttackState(_player));
 		return;

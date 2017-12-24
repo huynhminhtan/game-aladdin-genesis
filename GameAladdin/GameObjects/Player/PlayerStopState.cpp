@@ -28,7 +28,7 @@ void PlayerStopState::Update(float deltaTime)
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_D))
+	if (Input::GetInstance()->IsKeyPressed(DIK_C))
 	{
 		_player->SetState(new PlayerRunJumpState(_player));
 		return;

@@ -36,13 +36,13 @@ void PlayerClimbHorizontalIdleState::Update(float deltaTime)
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_S))
+	if (Input::GetInstance()->IsKeyPressed(DIK_X))
 	{
 		_player->SetState(new PlayerClimbAttackState(_player, _horizontalBar, PlayerState::StateName::ClimbHorizontalIde));
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_D))
+	if (Input::GetInstance()->IsKeyPressed(DIK_C))
 	{
 		//move player out of horizontal-bar (prevent loop idle->fall->idle)
 		PlayerState *newState = new PlayerFallState(_player);

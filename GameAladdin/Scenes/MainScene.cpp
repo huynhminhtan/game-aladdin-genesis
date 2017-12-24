@@ -94,7 +94,7 @@ void MainScene::Update(float dt)
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
 		_txtScore->SetString(Player::GetScore());
-		//_txtScore->SetString(dt);
+		_txtScore->SetString(dt);
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
 	}

@@ -9,6 +9,7 @@
 #include "../GameObjects/Camera.h"
 #include "Timer.h"
 #include "GameTime.h"
+#include "define.h"
 
 class Game
 {

@@ -40,13 +40,13 @@ void PlayerRunFallState::Update(float deltaTime)
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_S))
+	if (Input::GetInstance()->IsKeyPressed(DIK_X))
 	{
 		_player->SetState(new PlayerJumpAttackState(_player));
 		return;
 	}
 
-	if (Input::GetInstance()->IsKeyPressed(DIK_A) && _player->GetNumAppleWeapon() > 0)
+	if (Input::GetInstance()->IsKeyPressed(DIK_Z) && _player->GetNumAppleWeapon() > 0)
 	{
 		_player->SetState(new PlayerJumpThrowState(_player));
 		return;

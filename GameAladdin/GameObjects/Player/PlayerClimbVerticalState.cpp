@@ -52,12 +52,12 @@ void PlayerClimbVerticalState::Update(float deltaTime)
 	}
 
 	//change state
-	if (Input::GetInstance()->IsKeyPressed(DIK_S))
+	if (Input::GetInstance()->IsKeyPressed(DIK_X))
 	{
 		_player->SetState(new PlayerClimbAttackState(_player, _rope, PlayerState::StateName::ClimbVertical));
 		return;
 	}
-	if (Input::GetInstance()->IsKeyPressed(DIK_D))
+	if (Input::GetInstance()->IsKeyPressed(DIK_C))
 	{
 		_player->SetState(new PlayerClimbVerticalJumpState(_player));
 		return;
