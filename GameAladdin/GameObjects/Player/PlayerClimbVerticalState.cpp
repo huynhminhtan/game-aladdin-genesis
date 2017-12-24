@@ -14,7 +14,7 @@ PlayerClimbVerticalState::PlayerClimbVerticalState(Player * player, GameObject *
 	_rope = rope;
 	_player->SetPositionX(_rope->GetPosition().x);
 
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVertical", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.6f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVertical", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.0f));
 	_animation->Pause();
 
 	_player->SetAccelerationY(0);
