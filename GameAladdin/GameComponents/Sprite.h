@@ -4,6 +4,7 @@
 #include <d3dx9.h>
 #include "Graphics.h"
 #include "../GameObjects/Camera.h"
+#include "../GameComponents/define.h"
 
 class Sprite
 {

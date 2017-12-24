@@ -3,6 +3,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "../GameObjects/GameObject.h"
+#include "../GameComponents/define.h"
 
 class Camera:public GameObject
 {
@@ -11,6 +12,12 @@ private:
 
 	RECT _mapRect;
 	GameObject* _follow;
+
+	int _indexCamera;
+	int _indexCameraLeft;
+	bool _isPrKeyRight;
+	bool _isPrKeyLeft;
+
 public:
 	Camera(GameObject* follow = NULL);
 	~Camera();

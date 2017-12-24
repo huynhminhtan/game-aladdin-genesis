@@ -14,9 +14,15 @@
 //#include "utils.h"
 using namespace std;
 
-#define WINDOW_WIDTH 800 //640 
-#define WINDOW_HEIGHT 690 //448
+#define WINDOW_WIDTH 640 
+#define WINDOW_HEIGHT 448
+
 #define SCALE_FACTOR 2.0f
+
+#define SPACE_CAMERA 40
+
+
+////////////////////////////////////////////////////////////////////////////////////////
 
 #define C_WHITE D3DXCOLOR(1.0f, 1.0f, 1.0f, 1.0f) // màu trắnng
 #define COLOR_KEY D3DXCOLOR(1.0f, 0.0f, 1.0f, 1.0f)	// màu khi mà load hình nó bỏ qua > trong suốt

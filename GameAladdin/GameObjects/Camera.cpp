@@ -2,19 +2,25 @@
 #include "../GameComponents/Graphics.h"
 #include "../GameComponents/Input.h"
 #include "../GameComponents/SceneManager.h"
+#include "../GameComponents/define.h"
 
 Camera* Camera::_instance = NULL;
 
 Camera::Camera(GameObject* follow)
 {
 	_follow = follow;
-	_width = Graphics::GetInstance()->GetScreenWidth()/3;
-	_height = Graphics::GetInstance()->GetScreenHeight()/3;
+	_width = Graphics::GetInstance()->GetScreenWidth() / SCALE_FACTOR;
+	_height = Graphics::GetInstance()->GetScreenHeight() / SCALE_FACTOR;
 
-	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height/2.0f));
+	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height / 2.0f));
 	_position.x = _follow->GetPosition().x;
 
 	this->_instance = this;
+	
+	this->_indexCamera = -1;
+	this->_indexCameraLeft = -1;
+	this->_isPrKeyRight = false;
+	this->_isPrKeyLeft = false;
 }
 
 Camera::~Camera()
@@ -37,10 +43,84 @@ void Camera::Update(float deltaTime)
 
 	if (_follow != NULL)
 	{
-		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
+		if (_input->IsKeyPressed(DIK_RIGHT))
 		{
-			_position.x = _follow->GetPosition().x;
+			if (_isPrKeyLeft && (!_isPrKeyRight))
+			{
+				_indexCamera = SPACE_CAMERA * 2;
+				_isPrKeyLeft = false;
+				_indexCameraLeft = -1;
+				_position.x = _follow->GetPosition().x;
+
+			}
+			else
+			{
+				if (_isPrKeyRight)
+				{
+					_position.x = _follow->GetPosition().x + SPACE_CAMERA;
+					_indexCameraLeft = -1;
+					_isPrKeyLeft = false;
+				}
+				else
+				{
+					_indexCamera = SPACE_CAMERA;
+					_position.x = _follow->GetPosition().x;
+				}
+
+			}
+			//_posPressKey.x = _position.x;
 		}
+
+		if (_indexCamera > 0)
+		{
+			_position.x++;
+			_indexCamera--;
+			_isPrKeyRight = false;
+		}
+
+		if (_indexCamera <= 0 && (_indexCamera != -1)) {
+			_isPrKeyRight = true;
+		}
+
+		/////////////////////////////////////////////////////
+		if (_input->IsKeyPressed(DIK_LEFT))
+		{
+			if (_isPrKeyRight && (!_isPrKeyLeft))
+			{
+				_indexCameraLeft = SPACE_CAMERA * 2;
+				_isPrKeyRight = false;
+				_indexCamera = -1;
+				_position.x = _follow->GetPosition().x;
+
+			}
+
+			else
+			{
+				if (_isPrKeyLeft)
+				{
+					_position.x = _follow->GetPosition().x - SPACE_CAMERA;
+					_isPrKeyRight = false;
+					_indexCamera = -1;
+				}
+				else
+				{
+					_position.x = _follow->GetPosition().x;
+					_indexCameraLeft = SPACE_CAMERA;
+				}
+			}
+		}
+
+		if (_indexCameraLeft > 0)
+		{
+			_position.x--;
+			_indexCameraLeft--;
+			_isPrKeyLeft = false;
+		}
+
+		if (_indexCameraLeft <= 0 && (_indexCameraLeft != -1)) {
+			_isPrKeyLeft = true;
+		}
+
 
 		_position.y = _follow->GetPosition().y;
 
