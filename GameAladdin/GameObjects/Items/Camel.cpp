@@ -70,12 +70,9 @@ void Camel::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 			|| side == GameCollision::SideCollisions::TopLeft
 			|| side == GameCollision::SideCollisions::TopRight))
 	{
-		Player* player = dynamic_cast<Player*>(target);
-		if (player->GetState()->GetName() == PlayerState::StateName::Fall || player->GetState()->GetName() == PlayerState::StateName::RunFall)
-		{
-			_animation->SetCurrentIndex(0);
-			_animation->Play();
-			Sound::GetInstance()->Play("Camel_Spit", false, 1);
-		}
+		_animation->SetCurrentIndex(0);
+		_animation->Play();
+
+		Sound::GetInstance()->Play("Camel_Spit", false, 1);
 	}
 }
