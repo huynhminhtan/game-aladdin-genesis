@@ -12,6 +12,9 @@ protected:
 	int _health, _damage;
 	float _speed;
 
+	Animation *_animationSprite;
+	bool _isDead;
+
 	// use to detect the target being near
 	int _viewRangeX, _viewRangeY, _attackRangeX, _attackRangeY;
 	D3DXVECTOR2 _distanceToTarget;

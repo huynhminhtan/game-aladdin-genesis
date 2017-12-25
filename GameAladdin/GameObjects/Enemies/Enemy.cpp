@@ -30,22 +30,34 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 	_canFlip = true;
 
 	_collidedWithCoalDuration = 0;
+
+	_isDead = false;
+
+	_animationSprite = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemyDead(), "enemy_dead", ResourceManager::GetInstance()->GetTextureEnemyDead(), true, 1.2f);
+	//_animationSprite->SetScale(D3DXVECTOR2(0.8f, 0.8f));
 }
 
 Enemy::~Enemy()
 {
 	delete _state;
 	_state = 0;
+
+	delete _animationSprite;
 }
 
 void Enemy::Update(float deltaTime)
 {
+	_animationSprite->Update(deltaTime);
+
 	// calculate distance to target (player)
 	_distanceToTarget = _target->GetPosition() - _position;
 
 	//check isDie
 	if (_health <= 0)
-		_isVisible = false;
+	{ 
+		_isDead = true;
+		//_isVisible = false;
+	}
 
 	//face to left or right
 	if(_distanceToTarget.x > 0)
@@ -88,9 +100,22 @@ void Enemy::Update(float deltaTime)
 
 void Enemy::Draw(Camera * camera)
 {
-	Animation *animation = _state->GetAnimation();
-	if (animation != NULL)
-		animation->Draw(camera);
+	if (_isDead)
+	{
+		_animationSprite->SetPosition(_position);
+		_animationSprite->Draw(camera);
+
+		if (_animationSprite->IsFinish())
+		{
+			_isVisible = false;
+		}
+	}
+	else
+	{
+		Animation *animation = _state->GetAnimation();
+		if (animation != NULL)
+			animation->Draw(camera);
+	}
 }
 
 void Enemy::CheckCollision()

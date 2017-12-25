@@ -22,6 +22,7 @@ Apple::Apple():GameObject(GameObject::GameObjectType::Apple, false)
 Apple::~Apple()
 {
 	delete _appleSprite;
+	delete _animationSprite;
 }
 
 void Apple::Update(float dt)
