@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="enemy3_dead" imagePath="guard_knife_hit_strip8_47_64.png" width="640" height="67">
+    <sprite x="23" y="13" w="54" h="51" oX="23" oY="13" oW="-474" oH="587" />
+    <sprite x="103" y="14" w="54" h="50" oX="103" oY="14" oW="-474" oH="587" />
+    <sprite x="184" y="15" w="54" h="49" oX="184" oY="15" oW="-474" oH="587" />
+    <sprite x="263" y="16" w="54" h="49" oX="263" oY="16" oW="-474" oH="587" />
+    <sprite x="332" y="18" w="64" h="47" oX="332" oY="18" oW="-474" oH="587" />
+    <sprite x="402" y="5" w="67" h="60" oX="402" oY="5" oW="-474" oH="587" />
+    <sprite x="481" y="1" w="68" h="64" oX="481" oY="1" oW="-474" oH="587" />
+    <sprite x="562" y="5" w="67" h="60" oX="562" oY="5" oW="-474" oH="587" />
+  </Animation>
+</Animations>

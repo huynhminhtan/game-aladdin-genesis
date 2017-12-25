@@ -20,13 +20,15 @@ public:
 
 	Animation* GetAnimation();
 	void SetAnimation(Animation* newAnimation);
+	
+	bool IsAnimationFinish();
 
 	StateName GetName();
 
 	//special for attack state (used to make sure that player is attacked once at each attackState)
 	bool IsAttackedPlayer();
 	void SetIsAttackedPlayer(bool value);
-
+	
 protected:
 	StateName _name;
 	Enemy* _enemy;
@@ -36,5 +38,6 @@ protected:
 
 	//special for attack state (used to make sure that player is attacked once at each attackState)
 	bool _isAttackedPlayer;
+
 };
 

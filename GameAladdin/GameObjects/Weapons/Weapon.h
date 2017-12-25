@@ -2,6 +2,7 @@
 
 #include "../GameObject.h"
 #include "../../GameComponents/Animation.h"
+#include "../../GameComponents/define.h"
 
 class Weapon : public GameObject
 {
@@ -12,7 +13,7 @@ public:
 	};
 
 	Weapon();
-	Weapon(Weapon::WeaponType weaponType, int damage = 10);
+	Weapon(Weapon::WeaponType weaponType, int damage = DAMAGE_WEAPON_OF_PLAYER_AND_ENEMY);
 	virtual ~Weapon();
 
 	void Draw(Camera* camera);

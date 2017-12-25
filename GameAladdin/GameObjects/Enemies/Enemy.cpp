@@ -15,7 +15,7 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 
 	_footPosY = 0;
 
-	_health = 100;
+	_health = HEATH_ENEMY;
 	_damage = 5;
 	_speed = 10;
 
@@ -32,6 +32,7 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 	_collidedWithCoalDuration = 0;
 
 	_isDead = false;
+	_isAnimationDead = false;
 
 	_animationSprite = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemyDead(), "enemy_dead", ResourceManager::GetInstance()->GetTextureEnemyDead(), true, 1.2f);
 	//_animationSprite->SetScale(D3DXVECTOR2(0.8f, 0.8f));
@@ -54,26 +55,26 @@ void Enemy::Update(float deltaTime)
 
 	//check isDie
 	if (_health <= 0)
-	{ 
+	{
 		_isDead = true;
 		//_isVisible = false;
 	}
 
 	//face to left or right
-	if(_distanceToTarget.x > 0)
+	if (_distanceToTarget.x > 0)
 		_isRight = true;
 	else if (_distanceToTarget.x < 0)
 		_isRight = false;
 
 	//move
-	if(IsTargetInViewRange() && !IsTargetInAttackRange())
+	if (IsTargetInViewRange() && !IsTargetInAttackRange())
 	{
 		if (_distanceToTarget.x > 0 && _isMovableObject && _allowMoveRight)
 		{
 			//move right
 			_velocity.x = _speed;
 		}
-		else if(_distanceToTarget.x < 0 && _isMovableObject && _allowMoveLeft)
+		else if (_distanceToTarget.x < 0 && _isMovableObject && _allowMoveLeft)
 		{
 			//move left
 			_velocity.x = -1 * _speed;
@@ -100,6 +101,13 @@ void Enemy::Update(float deltaTime)
 
 void Enemy::Draw(Camera * camera)
 {
+	Animation *animation = _state->GetAnimation();
+
+	//if (_state->IsAnimationFinish())
+	//{
+	//	_isAnimationDead = true;
+	//}
+
 	if (_isDead)
 	{
 		_animationSprite->SetPosition(_position);
@@ -112,7 +120,6 @@ void Enemy::Draw(Camera * camera)
 	}
 	else
 	{
-		Animation *animation = _state->GetAnimation();
 		if (animation != NULL)
 			animation->Draw(camera);
 	}
@@ -139,8 +146,8 @@ void Enemy::CheckCollision()
 			this->OnCollision(gameObject, collisionData.GetSide());
 
 			//prevent enemy walk out of ground
-			
-			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || 
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground ||
 				gameObject->GetTag() == GameObject::GameObjectType::FloatGround ||
 				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
@@ -180,7 +187,7 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 	if (target->GetTag() == GameObject::GameObjectType::Players)
 	{
 		Player *player = dynamic_cast<Player*>(target);
-		
+
 		if (player->GetState()->GetName() == PlayerState::StateName::Attack && !player->GetState()->IsAttackedEnemy())
 		{
 			_health -= player->GetDamage();
@@ -197,7 +204,7 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 			SetHealth(_health - weapon->GetDamage());
 		}
 	}
-	
+
 	if (target->GetTag() == GameObject::GameObjectType::Coal)
 	{
 		//when colliding with coal, each duration, player's health will decrease
@@ -205,10 +212,10 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 		if (_collidedWithCoalDuration >= 3)
 		{
 			_collidedWithCoalDuration = 0;
-			SetHealth(_health - 10);
+			SetHealth(_health - DAMAGE_COAL_OF_ENEMY);
 		}
 	}
-	
+
 	_state->OnCollision(target, side);
 }
 
@@ -339,4 +346,9 @@ void Enemy::SetPosition(D3DXVECTOR3 position)
 D3DXVECTOR2 Enemy::GetDistanceToTarget()
 {
 	return _distanceToTarget;
+}
+
+bool Enemy::GetIsDead()
+{
+	return _isDead;
 }

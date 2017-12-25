@@ -30,6 +30,9 @@ protected:
 	//fix foot posY
 	int _footPosY;
 	void SetFootPosY();
+
+	bool _isAnimationDead;
+
 public:
 	Enemy();//not use
 	Enemy(GameObject * target);
@@ -70,5 +73,7 @@ public:
 	void SetPosition(D3DXVECTOR3 position);
 
 	D3DXVECTOR2 GetDistanceToTarget();
+
+	bool GetIsDead();
 };
 

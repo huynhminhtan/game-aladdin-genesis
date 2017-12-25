@@ -1,3 +1,4 @@
+#include "Enemy3Dead.h"
 #include "Enemy3WalkState.h"
 #include "Enemy3.h"
 #include "Enemy3IdleState.h"
@@ -31,6 +32,12 @@ void Enemy3WalkState::Update(float deltaTime)
 	if (_enemy->IsTargetInAttackRange())
 	{
 		_enemy->SetState(new Enemy3AttackState(_enemy));
+		return;
+	}
+
+	if (_enemy->GetHealth() <= 50)
+	{
+		_enemy->SetState(new Enemy3Dead(_enemy));
 		return;
 	}
 }

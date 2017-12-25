@@ -93,3 +93,8 @@ void EnemyState::SetIsAttackedPlayer(bool value)
 {
 	_isAttackedPlayer = value;
 }
+
+bool EnemyState::IsAnimationFinish()
+{
+	return _animation->IsFinish();
+}

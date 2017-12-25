@@ -24,7 +24,7 @@ int Player::GetScore()
 Player::Player() :GameObject(GameObject::GameObjectType::Players, true)
 {
 	Reset();
-	_numAppleWeapon = 1000;
+	_numAppleWeapon = NUM_APPLE_WEAPON;
 }
 
 Player::~Player()
@@ -35,10 +35,10 @@ Player::~Player()
 
 void Player::Reset()
 {
-	_mass = 35;
-	_speed = 45;
-	_jumpForce = 70;
-	_jumpRunForce = 80;
+	_mass = PLAYER_MASS;
+	_speed = PLAYER_SPEED;
+	_jumpForce = PLAYER_JUMP_FORCE;
+	_jumpRunForce = PLAYER_JUMP_RUN_FORCE;
 
 	_isRight = true;
 	_isGround = false;
@@ -46,8 +46,8 @@ void Player::Reset()
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 1000;
-	_damage = 50;
+	_health = HEATH_PLAYER;
+	_damage = DAMAGE_OF_PLAYER;
 
 	_deltaTime = 0.166f;
 

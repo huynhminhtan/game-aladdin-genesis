@@ -188,6 +188,7 @@
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3Dead.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy4\Enemy4.cpp" />
@@ -304,6 +305,7 @@
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3Dead.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy4\Enemy4.h" />

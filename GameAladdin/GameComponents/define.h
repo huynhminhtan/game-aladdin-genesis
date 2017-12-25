@@ -21,6 +21,19 @@ using namespace std;
 
 #define SPACE_CAMERA 40
 
+#define HEATH_ENEMY 130
+#define HEATH_PLAYER 1000
+
+#define DAMAGE_COAL_OF_ENEMY 10
+#define DAMAGE_OF_PLAYER 50
+#define DAMAGE_WEAPON_OF_PLAYER_AND_ENEMY 40
+
+#define PLAYER_MASS 35
+#define PLAYER_SPEED 45
+#define PLAYER_JUMP_FORCE 70
+#define PLAYER_JUMP_RUN_FORCE 80
+
+#define NUM_APPLE_WEAPON 969
 
 ////////////////////////////////////////////////////////////////////////////////////////
 
