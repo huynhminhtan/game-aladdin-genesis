@@ -23,6 +23,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLCamel;
 	tinyxml2::XMLDocument *_animationXMLCoalFire;
 	tinyxml2::XMLDocument *_animationXMLBottle;
+	tinyxml2::XMLDocument *_animationXMLItemSpark;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -35,6 +36,7 @@ private:
 	LPDIRECT3DTEXTURE9 _textureEnemies2;
 	LPDIRECT3DTEXTURE9 _textureItems;
 	LPDIRECT3DTEXTURE9 _textureCamel;
+	LPDIRECT3DTEXTURE9 _textureItemSpark;
 
 	//map 1
 	LPDIRECT3DTEXTURE9 _textureAgrabahMarket;
@@ -52,6 +54,7 @@ public:
 	static ResourceManager* GetInstance();
 
 	tinyxml2::XMLDocument* GetAnimationXMLAladdin();
+	tinyxml2::XMLDocument* GetAnimationXMLItemSpark();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy1();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy2();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3();
@@ -74,6 +77,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon2();
 
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();
+	LPDIRECT3DTEXTURE9 GetTextureItemSpark();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies2();
 	LPDIRECT3DTEXTURE9 GetTextureItems();

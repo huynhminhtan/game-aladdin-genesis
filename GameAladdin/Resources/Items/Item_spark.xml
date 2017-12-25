@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="item_spark" imagePath="item_spark_strip11_22_20.png" width="484" height="40">
+    <sprite x="13" y="19" w="5" h="5" oX="13" oY="19" oW="-426" oH="452" />
+    <sprite x="55" y="13" w="9" h="15" oX="55" oY="13" oW="-426" oH="452" />
+    <sprite x="99" y="11" w="11" h="17" oX="99" oY="11" oW="-426" oH="452" />
+    <sprite x="137" y="7" w="21" h="23" oX="137" oY="7" oW="-426" oH="452" />
+    <sprite x="177" y="5" w="33" h="31" oX="177" oY="5" oW="-426" oH="452" />
+    <sprite x="221" y="1" w="13" h="33" oX="221" oY="1" oW="-426" oH="452" />
+    <sprite x="241" y="5" w="37" h="33" oX="241" oY="5" oW="-426" oH="452" />
+    <sprite x="287" y="7" w="31" h="27" oX="287" oY="7" oW="-426" oH="452" />
+    <sprite x="327" y="11" w="33" h="25" oX="327" oY="11" oW="-426" oH="452" />
+    <sprite x="371" y="15" w="33" h="21" oX="371" oY="15" oW="-426" oH="452" />
+    <sprite x="419" y="19" w="33" h="19" oX="419" oY="19" oW="-426" oH="452" />
+    <sprite x="463" y="25" w="11" h="13" oX="463" oY="25" oW="-426" oH="452" />
+  </Animation>
+</Animations>

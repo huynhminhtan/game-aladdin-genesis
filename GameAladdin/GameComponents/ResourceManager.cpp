@@ -7,6 +7,9 @@ ResourceManager::ResourceManager()
 {
 	Graphics* graphics = Graphics::GetInstance();
 
+	_animationXMLItemSpark = new tinyxml2::XMLDocument();
+	_animationXMLItemSpark->LoadFile("Resources/Items/Item_spark.xml");
+
 	_animationXMLAladdin = new tinyxml2::XMLDocument();
 	_animationXMLAladdin->LoadFile("Resources/Aladdin/Aladdin-Animations.xml");
 
@@ -53,6 +56,7 @@ ResourceManager::ResourceManager()
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
 
 	_textureAladdin = graphics->LoadTexture(L"Resources/Aladdin/Aladdin_Sprite.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureItemSpark = graphics->LoadTexture(L"Resources/Items/item_spark_strip11_22_20.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
@@ -96,6 +100,7 @@ ResourceManager::ResourceManager()
 ResourceManager::~ResourceManager()
 {
 	delete _animationXMLAladdin;
+	delete _animationXMLItemSpark;
 	delete _animationXMLEnemy1;
 	delete _animationXMLEnemy2;
 	delete _animationXMLEnemy3;
@@ -111,6 +116,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLCoalFire;
 
 	_textureAladdin->Release();
+	_textureItemSpark->Release();
 	_textureEnemies1->Release();
 	_textureEnemies2->Release();
 	_textureItems->Release();
@@ -140,6 +146,11 @@ ResourceManager* ResourceManager::GetInstance()
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdin()
 {
 	return _animationXMLAladdin;
+}
+
+tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLItemSpark()
+{
+	return _animationXMLItemSpark;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy1()
@@ -240,6 +251,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafarWeapon2()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()
 {
 	return _textureAladdin;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureItemSpark()
+{
+	return _textureItemSpark;
 }
 
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies1()
