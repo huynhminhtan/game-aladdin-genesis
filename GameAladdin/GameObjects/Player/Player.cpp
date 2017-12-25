@@ -51,6 +51,11 @@ void Player::Reset()
 
 	_deltaTime = 0.166f;
 
+	_allowStairsBellow = false;
+	_allowStairsTop = false;
+	_totalFrameStrairs = 0;
+
+
 	_state = new PlayerFallState(this);
 }
 
@@ -158,6 +163,133 @@ void Player::CheckCollision()
 				//	this->SetAccelerationY(this->GetMass());
 				}
 			}
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::AllowStairsBellow
+				/*(this->_position.x >= 2580.5f) && (this->_position.x <= 2586.5f)*/)
+			{
+				//	_allowStairsBellow = (_allowStairsBellow) ? false : true;
+
+				_allowStairsBellow = true;
+
+				/*if (collisionData.GetSide() == GameCollision::SideCollisions::Right)
+				{
+					_allowStairsBellow++;
+
+					if (_allowStairsBellow == 2)
+						_allowStairsBellow = 0;
+					else
+						_allowStairsBellow = 2;
+				}*/
+			}
+
+			if (_allowStairsBellow)
+			{
+				if (gameObject->GetTag() == GameObject::GameObjectType::StairsEndBellow)
+				{
+
+					//if (collisionData.GetSide() == GameCollision::SideCollisions::Right /*||
+					//	collisionData.GetSide() == GameCollision::SideCollisions::BottomRight*/)
+					//{
+					//	// code here
+					//	if (this->GetVelocity().y == 0 && (_isRight == true))
+					//		this->_position.y -= (300 * _deltaTime);
+					//	//this->SetVelocityY(-1 * 3);
+					////	this->SetAccelerationY(this->GetMass());
+					//}
+
+					if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+					{
+						playerGround = true;
+					}
+				}
+
+				if (gameObject->GetTag() == GameObject::GameObjectType::StairsEndBellow)
+				{
+					// cho aladdin nhích lên
+					/*collisionData.GetSide() == GameCollision::SideCollisions::Left ||
+					collisionData.GetSide() == GameCollision::SideCollisions::TopLeft*/
+					if (collisionData.GetSide() == GameCollision::SideCollisions::Left /*||
+						collisionData.GetSide() == GameCollision::SideCollisions::BottomRight*/)
+					{
+						// code here
+						if (this->GetVelocity().y == 0 && (_isRight == false))
+							this->_position.y -= (300 * _deltaTime);
+						//this->SetVelocityY(-1 * 3);
+						//	this->SetAccelerationY(this->GetMass());
+					}
+				}
+			}
+
+			////////////////////////////////////////////////////////////////////////////////////////////
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::AllowStairsTop
+				/*(this->_position.x >= 2580.5f) && (this->_position.x <= 2586.5f)*/)
+			{
+				////	_allowStairsBellow = (_allowStairsBellow) ? false : true;
+
+				_allowStairsTop = true;
+				//_totalFrameStrairs++;
+
+				/*if (collisionData.GetSide() == GameCollision::SideCollisions::Right)
+				{
+				_allowStairsBellow++;
+
+				if (_allowStairsBellow == 2)
+				_allowStairsBellow = 0;
+				else
+				_allowStairsBellow = 2;
+				}*/
+			}
+
+		/*	if (_totalFrameStrairs >= 24)
+			{
+				_allowStairsTop = (_allowStairsTop) ? false : true;
+
+				_allowStairsTop = true;
+			}*/
+
+			if (_allowStairsTop)
+			{
+				_totalFrameStrairs = 0;
+				if (gameObject->GetTag() == GameObject::GameObjectType::StairsEndTop)
+				{
+					//if (collisionData.GetSide() == GameCollision::SideCollisions::Right /*||
+					//	collisionData.GetSide() == GameCollision::SideCollisions::BottomRight*/)
+					//{
+					//	// code here
+					//	if (this->GetVelocity().y == 0 && (_isRight == true))
+					//		this->_position.y -= (300 * _deltaTime);
+					//	//this->SetVelocityY(-1 * 3);
+					////	this->SetAccelerationY(this->GetMass());
+					//}
+
+					if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+					{
+						playerGround = true;
+					}
+				}
+
+				if (gameObject->GetTag() == GameObject::GameObjectType::StairsEndTop)
+				{
+					// cho aladdin nhích lên
+					/*collisionData.GetSide() == GameCollision::SideCollisions::Left ||
+					collisionData.GetSide() == GameCollision::SideCollisions::TopLeft*/
+					if (collisionData.GetSide() == GameCollision::SideCollisions::Right /*||
+						collisionData.GetSide() == GameCollision::SideCollisions::BottomRight*/)
+					{
+						// code here
+						if (this->GetVelocity().y == 0 && (_isRight == true))
+							this->_position.y -= (300 * _deltaTime);
+						//this->SetVelocityY(-1 * 3);
+						//	this->SetAccelerationY(this->GetMass());
+					}
+				}
+			}
+
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Wall ||
 				gameObject->GetTag() == GameObject::GameObjectType::Ground ||

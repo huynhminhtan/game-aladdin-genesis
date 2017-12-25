@@ -236,10 +236,54 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(gameObject);
 			}
 
-			//init wall
+			//init Stairs
 			if (objectGroup->GetName() == "Stairs")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Stairs);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init StairsEndTop
+			if (objectGroup->GetName() == "StairsEndTop")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::StairsEndTop);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init StairsEndBellow
+			if (objectGroup->GetName() == "StairsEndBellow")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::StairsEndBellow);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init AllowStairsBellow
+			if (objectGroup->GetName() == "AllowStairsBellow")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::AllowStairsBellow);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init AllowStairsTop
+			if (objectGroup->GetName() == "AllowStairsTop")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::AllowStairsTop);
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());

@@ -29,7 +29,11 @@ public:
 		Springboard,
 		Camels,
 		ToJafarScene,
-		Stairs
+		Stairs,
+		StairsEndTop,
+		StairsEndBellow,
+		AllowStairsBellow,
+		AllowStairsTop
 	};
 protected:
 	GameObjectType _tag;

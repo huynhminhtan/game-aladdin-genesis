@@ -22,6 +22,11 @@ private:
 	int _health, _damage, _numAppleWeapon;
 	float _deltaTime;
 
+	bool _allowStairsBellow;
+	bool _allowStairsTop;
+
+	int _totalFrameStrairs;
+
 public:
 	static int GetTimesPlay();
 	static int GetScore();
@@ -69,6 +74,10 @@ public:
 
 	int GetNumAppleWeapon();
 	void SetNumAppleWeapon(int value);
+
+	int AXA() {
+		return _totalFrameStrairs;
+	}
 
 };
 
