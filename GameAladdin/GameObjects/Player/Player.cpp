@@ -1,4 +1,4 @@
-#include "Player.h"
+﻿#include "Player.h"
 #include "PlayerFallState.h"
 #include "PlayerDeathState.h"
 #include "PlayerDamageState.h"
@@ -21,7 +21,7 @@ int Player::GetScore()
 	return _score;
 }
 
-Player::Player():GameObject(GameObject::GameObjectType::Players, true)
+Player::Player() :GameObject(GameObject::GameObjectType::Players, true)
 {
 	Reset();
 	_numAppleWeapon = 1000;
@@ -49,12 +49,16 @@ void Player::Reset()
 	_health = 1000;
 	_damage = 50;
 
+	_deltaTime = 0.166f;
+
 	_state = new PlayerFallState(this);
 }
 
 void Player::Update(float deltaTime)
 {
-	if (_isGround && _velocity.y>0)
+	_deltaTime = deltaTime;
+
+	if (_isGround && _velocity.y > 0)
 	{
 		_acceleration.y = 0;
 		_velocity.y = 0;
@@ -63,7 +67,7 @@ void Player::Update(float deltaTime)
 	//face to right or left
 	if (_input->IsKeyPressed(DIK_LEFT) && _health > 0)
 		_isRight = false;
-	else if(_input->IsKeyPressed(DIK_RIGHT) && _health > 0)
+	else if (_input->IsKeyPressed(DIK_RIGHT) && _health > 0)
 		_isRight = true;
 
 	//move
@@ -75,8 +79,9 @@ void Player::Update(float deltaTime)
 		_velocity.x = 0;
 
 	GameObject::Update(deltaTime);
-	if(_state!=NULL)
+	if (_state != NULL)
 		_state->Update(deltaTime);
+
 }
 
 void Player::Draw(Camera * camera)
@@ -120,15 +125,43 @@ void Player::CheckCollision()
 		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround || gameObject->GetTag() == GameObject::GameObjectType::Wall)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground ||
+				gameObject->GetTag() == GameObject::GameObjectType::FloatGround ||
+				gameObject->GetTag() == GameObject::GameObjectType::Wall ||
+				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+				{
 					playerGround = true;
+
+					// Kéo Aladdin xuống mọi lúc, để va chạm không bị thục xuống
+					// -> không sử dụng được
+					//this->_position.y -= (10 * _deltaTime);
+				}
 			}
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Ground)
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::Stairs)
+			{
+				// cho aladdin nhích lên
+				/*collisionData.GetSide() == GameCollision::SideCollisions::Left ||
+				collisionData.GetSide() == GameCollision::SideCollisions::TopLeft*/
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Right /*||
+					collisionData.GetSide() == GameCollision::SideCollisions::BottomRight*/)
+				{
+					// code here
+					if (this->GetVelocity().y == 0 && (_isRight == true))
+						this->_position.y -= (300 * _deltaTime);
+					//this->SetVelocityY(-1 * 3);
+				//	this->SetAccelerationY(this->GetMass());
+				}
+			}
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::Wall ||
+				gameObject->GetTag() == GameObject::GameObjectType::Ground ||
+				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;
@@ -137,10 +170,11 @@ void Player::CheckCollision()
 			}
 		}
 	}
+
 	_isGround = playerGround;
 
 	//because climb state has own move rule
-	if (_state!=NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
+	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
 	{
 		_allowMoveLeft = allowPlayerMoveLeft;
 		_allowMoveRight = allowPlayerMoveRight;
@@ -351,7 +385,7 @@ void Player::SetHealth(int newHealth)
 		}
 	}
 
-	
+
 }
 
 int Player::GetDamage()
@@ -373,3 +407,5 @@ void Player::SetNumAppleWeapon(int value)
 {
 	_numAppleWeapon = value;
 }
+
+

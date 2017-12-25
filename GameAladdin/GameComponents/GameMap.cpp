@@ -237,6 +237,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			}
 
 			//init wall
+			if (objectGroup->GetName() == "Stairs")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Stairs);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init wall
 			if (objectGroup->GetName() == "ToJafarScene")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene);

@@ -115,7 +115,9 @@ void Enemy::CheckCollision()
 
 			//prevent enemy walk out of ground
 			
-			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || 
+				gameObject->GetTag() == GameObject::GameObjectType::FloatGround ||
+				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomRight
 					|| collisionData.GetSide() == GameCollision::SideCollisions::Left)
@@ -132,7 +134,9 @@ void Enemy::CheckCollision()
 				}
 			}
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Ground)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Wall ||
+				gameObject->GetTag() == GameObject::GameObjectType::Ground ||
+				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;

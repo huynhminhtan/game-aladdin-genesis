@@ -28,7 +28,8 @@ public:
 		ScoreObjects,
 		Springboard,
 		Camels,
-		ToJafarScene
+		ToJafarScene,
+		Stairs
 	};
 protected:
 	GameObjectType _tag;

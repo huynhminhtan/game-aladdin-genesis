@@ -62,4 +62,18 @@ void PlayerIdleState::Update(float deltaTime)
 		_player->SetState(new PlayerFallState(_player));
 		return;
 	}
+
+	//if (!_player->IsGround())
+	//{
+	//	if (_player->GetVelocity().y > 10)
+	//	{
+	//		_player->SetState(new PlayerFallState(_player));
+	//		return;
+	//	}
+	//	else
+	//	{
+	//		_player->SetAccelerationY(_player->GetMass());
+	//		return;
+	//	}
+	//}
 }

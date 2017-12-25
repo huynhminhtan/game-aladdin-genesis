@@ -51,7 +51,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="1104.79" y="317.515" width="37" height="50"/>
+  <object id="207" gid="12" x="752.29" y="614.015" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
@@ -246,13 +246,6 @@
  </layer>
  <objectgroup name="Ground">
   <object id="99" x="0" y="635" width="1461.97" height="53.6667"/>
-  <object id="114" x="1348" y="574.333" width="127.333" height="56.5"/>
-  <object id="115" x="1310.67" y="582.333" width="164.667" height="49"/>
-  <object id="117" x="1268.67" y="590" width="206" height="42"/>
-  <object id="118" x="1228.67" y="598.666" width="246.667" height="32.6667"/>
-  <object id="119" x="1188" y="607.334" width="288" height="24"/>
-  <object id="120" x="1148" y="614.667" width="328" height="17.3334"/>
-  <object id="122" x="1387.33" y="566.417" width="112" height="10.9167"/>
   <object id="123" x="1462.67" y="664" width="2910.33" height="25.3333"/>
   <object id="128" x="1748.67" y="435.833" width="292.667" height="16.8333"/>
   <object id="129" x="1474.33" y="435.667" width="105.333" height="15"/>
@@ -297,6 +290,15 @@
   <object id="258" x="2472.5" y="635.5" width="58.5" height="8.25"/>
   <object id="259" x="2482.75" y="643.75" width="80.5" height="8.5"/>
   <object id="260" x="2544.25" y="651" width="43.5" height="12.5"/>
+ </objectgroup>
+ <objectgroup name="Stairs">
+  <object id="120" x="1147.75" y="614.584" width="328" height="17.3334"/>
+  <object id="118" x="1228.5" y="593.749" width="246.667" height="32.6667"/>
+  <object id="115" x="1307" y="578.083" width="164.667" height="49"/>
+  <object id="122" x="1388.41" y="560.917" width="105" height="29.4167"/>
+  <object id="117" x="1267.59" y="585.5" width="206" height="42"/>
+  <object id="119" x="1188.08" y="601.917" width="288" height="24"/>
+  <object id="114" x="1349.5" y="573.75" width="127.333" height="56.5"/>
  </objectgroup>
  <objectgroup name="Wall">
   <object id="227" x="4772" y="226" width="44" height="463"/>

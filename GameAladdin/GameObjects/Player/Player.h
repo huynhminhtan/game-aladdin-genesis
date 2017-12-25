@@ -20,6 +20,8 @@ private:
 	float _collidedWithCoalDuration;
 
 	int _health, _damage, _numAppleWeapon;
+	float _deltaTime;
+
 public:
 	static int GetTimesPlay();
 	static int GetScore();
@@ -67,5 +69,6 @@ public:
 
 	int GetNumAppleWeapon();
 	void SetNumAppleWeapon(int value);
+
 };
 
