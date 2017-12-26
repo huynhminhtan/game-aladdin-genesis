@@ -25,6 +25,7 @@ public:
 		Spring,//nhay cuon tron
 		ClimbVertical,
 		ClimbAttack,
+		ClimbThrow,
 		ClimbVerticalJump,
 		ClimbVerticalFall,
 		ClimbHorizontalIde,

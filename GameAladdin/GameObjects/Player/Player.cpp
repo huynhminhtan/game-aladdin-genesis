@@ -306,7 +306,10 @@ void Player::CheckCollision()
 	_isGround = playerGround;
 
 	//because climb state has own move rule
-	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
+	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && 
+		_state->GetName() != PlayerState::StateName::ClimbAttack &&
+		_state->GetName() != PlayerState::StateName::ClimbThrow &&
+		_state->GetName() != PlayerState::StateName::Up)
 	{
 		_allowMoveLeft = allowPlayerMoveLeft;
 		_allowMoveRight = allowPlayerMoveRight;

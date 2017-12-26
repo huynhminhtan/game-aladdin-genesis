@@ -11,6 +11,9 @@ PlayerUpState::PlayerUpState()
 PlayerUpState::PlayerUpState(Player * player) : PlayerState(player, PlayerState::StateName::Up)
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Up", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f, false));
+
+	_player->AllowMoveLeft(false);
+	_player->AllowMoveRight(false);
 }
 
 

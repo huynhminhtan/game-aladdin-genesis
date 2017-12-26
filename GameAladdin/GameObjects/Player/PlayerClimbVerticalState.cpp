@@ -3,6 +3,7 @@
 #include "PlayerClimbAttackState.h"
 #include "PlayerClimbVerticalJumpState.h"
 #include "PlayerFallState.h"
+#include "PlayerClimbThrowState.h"
 
 
 PlayerClimbVerticalState::PlayerClimbVerticalState()
@@ -57,11 +58,19 @@ void PlayerClimbVerticalState::Update(float deltaTime)
 		_player->SetState(new PlayerClimbAttackState(_player, _rope, PlayerState::StateName::ClimbVertical));
 		return;
 	}
+
+	if (Input::GetInstance()->IsKeyPressed(DIK_Z))
+	{
+		_player->SetState(new PlayerClimbThrowState(_player, _rope, PlayerState::StateName::ClimbVertical));
+		return;
+	}
+
 	if (Input::GetInstance()->IsKeyPressed(DIK_C))
 	{
 		_player->SetState(new PlayerClimbVerticalJumpState(_player));
 		return;
 	}
+	
 	if (_player->GetBound().bottom > _rope->GetBound().bottom)
 	{
 		_player->SetState(new PlayerFallState(_player));

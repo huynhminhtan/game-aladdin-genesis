@@ -3,6 +3,7 @@
 #include "PlayerClimbHorizontalMoveState.h"
 #include "PlayerClimbAttackState.h"
 #include "PlayerFallState.h"
+#include "PlayerClimbThrowState.h"
 
 PlayerClimbHorizontalIdleState::PlayerClimbHorizontalIdleState()
 {
@@ -39,6 +40,12 @@ void PlayerClimbHorizontalIdleState::Update(float deltaTime)
 	if (Input::GetInstance()->IsKeyPressed(DIK_X))
 	{
 		_player->SetState(new PlayerClimbAttackState(_player, _horizontalBar, PlayerState::StateName::ClimbHorizontalIde));
+		return;
+	}
+
+	if (Input::GetInstance()->IsKeyPressed(DIK_Z))
+	{
+		_player->SetState(new PlayerClimbThrowState(_player, _horizontalBar, PlayerState::StateName::ClimbHorizontalIde));
 		return;
 	}
 
