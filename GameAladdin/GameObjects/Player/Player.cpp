@@ -55,6 +55,8 @@ void Player::Reset()
 	_allowStairsTop = false;
 	_totalFrameStrairs = 0;
 
+	_hurt = 0;
+
 	_isPushWall = false;
 	_state = new PlayerFallState(this);
 }
@@ -62,6 +64,10 @@ void Player::Reset()
 void Player::Update(float deltaTime)
 {
 	_deltaTime = deltaTime;
+
+	// check hurt
+	if (_hurt > 0)
+		_hurt = max(--_hurt, 0);
 
 	if (_isGround && _velocity.y > 0)
 	{
@@ -91,10 +97,12 @@ void Player::Update(float deltaTime)
 
 void Player::Draw(Camera * camera)
 {
-	Animation *animation = _state->GetAnimation();
-	if (animation != NULL)
-		animation->Draw(camera);
-
+	if ((_hurt / 5) % 2 == 0)
+	{
+		Animation *animation = _state->GetAnimation();
+		if (animation != NULL)
+			animation->Draw(camera);
+	}
 	//debug
 	/*
 	D3DXVECTOR3 newPosition = camera->ConvertPosition(_position.x, _position.y);
@@ -528,6 +536,9 @@ void Player::SetHealth(int newHealth)
 		{
 			SetState(new PlayerDamageState(this));
 		}
+
+		if (_hurt == 0)
+			_hurt = 100;
 	}
 
 	_health = newHealth;
@@ -545,8 +556,6 @@ void Player::SetHealth(int newHealth)
 			_camera->SetPosition(_position);
 		}
 	}
-
-
 }
 
 int Player::GetDamage()

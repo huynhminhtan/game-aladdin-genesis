@@ -24,10 +24,11 @@ private:
 
 	bool _allowStairsBellow;
 	bool _allowStairsTop;
-
 	int _totalFrameStrairs;
 
 	bool _isPushWall;
+
+	int _hurt;
 
 public:
 	static int GetTimesPlay();
