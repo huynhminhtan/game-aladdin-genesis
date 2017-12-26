@@ -20,6 +20,7 @@ public:
 		Weapons,
 		Ground,
 		Wall,
+		WallPush,
 		Rope,
 		HorizontalBar,
 		FloatGround,

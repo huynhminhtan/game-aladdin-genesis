@@ -247,6 +247,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(gameObject);
 			}
 
+			//init WallPush
+			if (objectGroup->GetName() == "WallPush")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::WallPush);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
 			//init StairsEndTop
 			if (objectGroup->GetName() == "StairsEndTop")
 			{

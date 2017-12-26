@@ -218,4 +218,15 @@
     <sprite x="189" y="1664" w="30" h="88" oX="189" oY="1664" oW="1718" oH="256" />
     <sprite x="239" y="1664" w="57" h="88" oX="239" oY="1664" oW="1718" oH="256" />
   </Animation>
+  <Animation name="push_wall" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="7" y="1959" w="56" h="45" oX="7" oY="1959" oW="2013" oH="721" />
+    <sprite x="75" y="1961" w="65" h="43" oX="75" oY="1961" oW="2013" oH="721" />
+    <sprite x="157" y="1961" w="70" h="44" oX="157" oY="1961" oW="2013" oH="721" />
+    <sprite x="237" y="1962" w="77" h="43" oX="237" oY="1962" oW="2013" oH="721" />
+    <sprite x="327" y="1964" w="72" h="43" oX="327" oY="1964" oW="2013" oH="721" />
+    <sprite x="416" y="1965" w="66" h="43" oX="416" oY="1965" oW="2013" oH="721" />
+    <sprite x="495" y="1965" w="75" h="43" oX="495" oY="1965" oW="2013" oH="721" />
+    <sprite x="585" y="1966" w="81" h="43" oX="585" oY="1966" oW="2013" oH="721" />
+    <sprite x="681" y="1968" w="75" h="43" oX="681" oY="1968" oW="2013" oH="721" />
+  </Animation>
 </Animations>

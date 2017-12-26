@@ -4,6 +4,7 @@
 #include "PlayerRunJumpState.h"
 #include "PlayerRunFallState.h"
 #include "PlayerIdleState.h"
+#include "PlayerPushWallState.h"
 
 PlayerRunState::PlayerRunState()
 {
@@ -22,6 +23,12 @@ PlayerRunState::~PlayerRunState()
 void PlayerRunState::Update(float deltaTime)
 {
 	PlayerState::Update(deltaTime);
+
+	if (_player->GetIsPushWall())
+	{
+		_player->SetState(new PlayerPushWallState(_player));
+		return;
+	}
 
 	if (_player->GetVelocity().x == 0)//change state
 	{

@@ -27,6 +27,8 @@ private:
 
 	int _totalFrameStrairs;
 
+	bool _isPushWall;
+
 public:
 	static int GetTimesPlay();
 	static int GetScore();
@@ -78,6 +80,8 @@ public:
 	int AXA() {
 		return _totalFrameStrairs;
 	}
+
+	bool GetIsPushWall();
 
 };
 

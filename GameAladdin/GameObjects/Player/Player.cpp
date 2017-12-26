@@ -55,7 +55,7 @@ void Player::Reset()
 	_allowStairsTop = false;
 	_totalFrameStrairs = 0;
 
-
+	_isPushWall = false;
 	_state = new PlayerFallState(this);
 }
 
@@ -117,6 +117,7 @@ void Player::CheckCollision()
 	bool playerGround = false;
 	bool allowPlayerMoveLeft = true;
 	bool allowPlayerMoveRight = true;
+	bool isPushWall = false;
 
 	for (size_t i = 0; i < listCanCollide.size(); i++)
 	{
@@ -147,6 +148,22 @@ void Player::CheckCollision()
 				}
 			}
 
+			/////////////////////////////////////////
+			// check đẩy tường
+			//
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::WallPush &&
+				(Input::GetInstance()->IsKeyPressed(DIK_RIGHT) ||
+					Input::GetInstance()->IsKeyPressed(DIK_LEFT)))
+			{
+				isPushWall = true;
+			}
+
+			_isPushWall = isPushWall;
+
+			////////////////////////////////////////
+			// check cầu thang
+			//
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Stairs)
 			{
@@ -243,12 +260,12 @@ void Player::CheckCollision()
 				}*/
 			}
 
-		/*	if (_totalFrameStrairs >= 24)
-			{
-				_allowStairsTop = (_allowStairsTop) ? false : true;
+			/*	if (_totalFrameStrairs >= 24)
+				{
+					_allowStairsTop = (_allowStairsTop) ? false : true;
 
-				_allowStairsTop = true;
-			}*/
+					_allowStairsTop = true;
+				}*/
 
 			if (_allowStairsTop)
 			{
@@ -290,10 +307,14 @@ void Player::CheckCollision()
 				}
 			}
 
+			// END check cầu thang
+			//////////////////////////////////////////////////////////////////////////
+			/////////////////////////////////////////////////////////////////////////////
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Wall ||
 				gameObject->GetTag() == GameObject::GameObjectType::Ground ||
-				gameObject->GetTag() == GameObject::GameObjectType::Stairs)
+				gameObject->GetTag() == GameObject::GameObjectType::Stairs ||
+				gameObject->GetTag() == GameObject::GameObjectType::WallPush)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;
@@ -306,12 +327,13 @@ void Player::CheckCollision()
 	_isGround = playerGround;
 
 	//because climb state has own move rule
-	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && 
-		_state->GetName() != PlayerState::StateName::ClimbAttack &&
+	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbAttack &&
+		_state->GetName() != PlayerState::StateName::ClimbVertical &&
 		_state->GetName() != PlayerState::StateName::ClimbThrow &&
 		_state->GetName() != PlayerState::StateName::Up &&
 		_state->GetName() != PlayerState::StateName::CrouchIdle &&
-		_state->GetName() != PlayerState::StateName::CrouchAttack)
+		_state->GetName() != PlayerState::StateName::CrouchAttack &&
+		_state->GetName() != PlayerState::StateName::PushWall)
 	{
 		_allowMoveLeft = allowPlayerMoveLeft;
 		_allowMoveRight = allowPlayerMoveRight;
@@ -547,4 +569,7 @@ void Player::SetNumAppleWeapon(int value)
 	_numAppleWeapon = value;
 }
 
-
+bool Player::GetIsPushWall()
+{
+	return _isPushWall;
+}

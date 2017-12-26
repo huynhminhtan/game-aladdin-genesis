@@ -1,4 +1,4 @@
-#include "PlayerIdleState.h"
+#include "PlayerPushWallState.h"
 #include "Player.h"
 #include "PlayerRunState.h"
 #include "PlayerAttackState.h"
@@ -8,31 +8,31 @@
 #include "PlayerCrouchIdleState.h"
 #include "PlayerDamageState.h"
 #include "PlayerUpState.h"
-#include "PlayerPushWallState.h"
+#include "PlayerIdleState.h"
 
-PlayerIdleState::PlayerIdleState()
+PlayerPushWallState::PlayerPushWallState()
 {
 }
 
-PlayerIdleState::PlayerIdleState(Player* player) :PlayerState(player, PlayerState::StateName::Idle)
+PlayerPushWallState::PlayerPushWallState(Player * player) : PlayerState(player, PlayerState::StateName::PushWall)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Idle", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "push_wall", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.6f));
 }
 
 
-PlayerIdleState::~PlayerIdleState()
+PlayerPushWallState::~PlayerPushWallState()
 {
 }
 
-void PlayerIdleState::Update(float deltaTime)
+void PlayerPushWallState::Update(float deltaTime)
 {
 	PlayerState::Update(deltaTime);
 
 	//change state
-
-	if (_player->GetIsPushWall())
+	
+	if (/*_animation->IsFinish()*/!_player->GetIsPushWall())//change state
 	{
-		_player->SetState(new PlayerPushWallState(_player));
+		_player->SetState(new PlayerIdleState(_player));
 		return;
 	}
 
@@ -73,23 +73,10 @@ void PlayerIdleState::Update(float deltaTime)
 		return;
 	}
 
-	if (!_player->IsGround())
+	/*if (!_player->IsGround())
 	{
 		_player->SetState(new PlayerFallState(_player));
 		return;
-	}
+	}*/
 
-	//if (!_player->IsGround())
-	//{
-	//	if (_player->GetVelocity().y > 10)
-	//	{
-	//		_player->SetState(new PlayerFallState(_player));
-	//		return;
-	//	}
-	//	else
-	//	{
-	//		_player->SetAccelerationY(_player->GetMass());
-	//		return;
-	//	}
-	//}
 }

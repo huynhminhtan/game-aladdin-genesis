@@ -14,7 +14,7 @@ public:
 		Stop,//run->idle
 		CrouchIdle,
 		CrouchAttack,
-		Fall,
+		Fall, // 5
 		Jump,
 		Attack,
 		Throw,
@@ -32,7 +32,8 @@ public:
 		ClimbHorizontalMove,
 		Damage,
 		Death,
-		Up
+		Up,
+		PushWall
 	};
 protected:
 	StateName _name;

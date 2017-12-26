@@ -230,6 +230,7 @@
     <ClCompile Include="GameObjects\Player\PlayerJumpAttackState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerJumpState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerJumpThrowState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerPushWallState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerRunFallState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerRunJumpState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerRunState.cpp" />
@@ -349,6 +350,7 @@
     <ClInclude Include="GameObjects\Player\PlayerJumpAttackState.h" />
     <ClInclude Include="GameObjects\Player\PlayerJumpState.h" />
     <ClInclude Include="GameObjects\Player\PlayerJumpThrowState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerPushWallState.h" />
     <ClInclude Include="GameObjects\Player\PlayerRunFallState.h" />
     <ClInclude Include="GameObjects\Player\PlayerRunJumpState.h" />
     <ClInclude Include="GameObjects\Player\PlayerRunState.h" />

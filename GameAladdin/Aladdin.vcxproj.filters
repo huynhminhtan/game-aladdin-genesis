@@ -423,6 +423,9 @@
     <ClCompile Include="GameObjects\Player\PlayerClimbThrowState.cpp">
       <Filter>GameObjects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerPushWallState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -774,6 +777,9 @@
       <Filter>GameObjects\Player</Filter>
     </ClInclude>
     <ClInclude Include="GameObjects\Player\PlayerClimbThrowState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerPushWallState.h">
       <Filter>GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>
