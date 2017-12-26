@@ -188,7 +188,10 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 	{
 		Player *player = dynamic_cast<Player*>(target);
 
-		if (player->GetState()->GetName() == PlayerState::StateName::Attack && !player->GetState()->IsAttackedEnemy())
+		if ((player->GetState()->GetName() == PlayerState::StateName::Attack ||
+			player->GetState()->GetName() == PlayerState::StateName::JumpAttack ||
+			player->GetState()->GetName() == PlayerState::StateName::CrouchAttack) &&
+			!player->GetState()->IsAttackedEnemy())
 		{
 			_health -= player->GetDamage();
 			player->GetState()->SetIsAttackedEnemy(true);

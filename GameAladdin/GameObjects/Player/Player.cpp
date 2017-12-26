@@ -309,7 +309,9 @@ void Player::CheckCollision()
 	if (_state != NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && 
 		_state->GetName() != PlayerState::StateName::ClimbAttack &&
 		_state->GetName() != PlayerState::StateName::ClimbThrow &&
-		_state->GetName() != PlayerState::StateName::Up)
+		_state->GetName() != PlayerState::StateName::Up &&
+		_state->GetName() != PlayerState::StateName::CrouchIdle &&
+		_state->GetName() != PlayerState::StateName::CrouchAttack)
 	{
 		_allowMoveLeft = allowPlayerMoveLeft;
 		_allowMoveRight = allowPlayerMoveRight;
@@ -338,7 +340,9 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 
 	if (target->GetTag() == GameObject::GameObjectType::Weapons)
 	{
-		if (_state->GetName() != PlayerState::StateName::Attack && _state->GetName() != PlayerState::StateName::JumpAttack)
+		if (_state->GetName() != PlayerState::StateName::Attack &&
+			_state->GetName() != PlayerState::StateName::JumpAttack &&
+			_state->GetName() != PlayerState::StateName::CrouchAttack)
 		{
 			Weapon* weapon = dynamic_cast<Weapon*>(target);
 			if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons && !weapon->IsAttacked())

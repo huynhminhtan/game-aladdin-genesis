@@ -11,6 +11,9 @@ PlayerCrouchAttackState::PlayerCrouchAttackState(Player * player) :PlayerState(p
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
 	Sound::GetInstance()->Play("Low_Sword", 0, 1);
+
+	_player->AllowMoveLeft(false);
+	_player->AllowMoveRight(false);
 }
 
 

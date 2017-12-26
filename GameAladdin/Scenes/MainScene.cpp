@@ -1,7 +1,7 @@
 #include "MainScene.h"
 #include "../GameComponents/Sound.h"
 
-MainScene::MainScene():Scene(0x9090b0)
+MainScene::MainScene() :Scene(0x9090b0)
 {
 	LoadContent();
 }
@@ -94,7 +94,11 @@ void MainScene::Update(float dt)
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
 		_txtScore->SetString(Player::GetScore());
-		_txtScore->SetString(dt);
+	/*	if (_gameMap->GetPlayer()->GetVelocity().y == 0)
+			_txtScore->SetString(_gameMap->GetPlayer()->GetVelocity().y);*/
+
+		_txtScore->SetString(_gameMap->GetPlayer()->AXA());
+
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
 	}
@@ -112,7 +116,7 @@ void MainScene::Draw()
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
 
-	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, 50));
+	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 250, 50));
 
 	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
 }
