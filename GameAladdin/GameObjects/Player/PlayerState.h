@@ -30,7 +30,8 @@ public:
 		ClimbHorizontalIde,
 		ClimbHorizontalMove,
 		Damage,
-		Death
+		Death,
+		Up
 	};
 protected:
 	StateName _name;

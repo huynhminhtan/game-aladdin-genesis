@@ -20,6 +20,7 @@ using namespace std;
 #define SCALE_FACTOR 2.0f
 
 #define SPACE_CAMERA 40
+#define SPACE_ALADIN_UP 10
 
 #define HEATH_ENEMY 130
 #define HEATH_PLAYER 1000

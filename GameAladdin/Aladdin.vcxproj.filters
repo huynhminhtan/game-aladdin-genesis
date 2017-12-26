@@ -417,6 +417,9 @@
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3Dead.cpp">
       <Filter>GameObjects\Enemies\Enemy3</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerUpState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -763,6 +766,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3Dead.h">
       <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerUpState.h">
+      <Filter>GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

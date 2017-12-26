@@ -206,4 +206,9 @@
     <sprite x="614" y="2232" w="39" h="49" oX="614" oY="2282" oW="2297" oH="760" />
     <sprite x="661" y="2232" w="40" h="50" oX="661" oY="2283" oW="2297" oH="760" />
   </Animation>
+   <Animation name="Up" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <!-- <sprite x="11" y="496" w="38" h="52" oX="11" oY="496" oW="530" oH="133" /> -->
+    <sprite x="59" y="490" w="44" h="58" oX="59" oY="490" oW="530" oH="133" />
+    <sprite x="111" y="491" w="48" h="57" oX="111" oY="491" oW="530" oH="133" />
+  </Animation>
 </Animations>

@@ -5,6 +5,7 @@
 #include "PlayerJumpState.h"
 #include "PlayerThrowState.h"
 #include "PlayerCrouchIdleState.h"
+#include "PlayerUpState.h"
 
 PlayerDamageState::PlayerDamageState()
 {
@@ -56,6 +57,13 @@ void PlayerDamageState::Update(float deltaTime)
 	if (Input::GetInstance()->IsKeyPressed(DIK_DOWN))
 	{
 		_player->SetState(new PlayerCrouchIdleState(_player));
+		return;
+	}
+
+	//Up
+	if (Input::GetInstance()->IsKeyPressed(DIK_UP))
+	{
+		_player->SetState(new PlayerUpState(_player));
 		return;
 	}
 }

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="aladdin_up" imagePath="aladdin_look_strip3_51_117.png" width="300" height="120">
+    
+    <sprite x="105" y="1" w="90" h="117" oX="105" oY="1" oW="-77" oH="257" />
+    <sprite x="201" y="3" w="98" h="115" oX="201" oY="3" oW="-77" oH="257" />
+  </Animation>
+</Animations>

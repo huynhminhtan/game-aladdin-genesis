@@ -236,6 +236,7 @@
     <ClCompile Include="GameObjects\Player\PlayerState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerStopState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerThrowState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerUpState.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.cpp" />
@@ -353,6 +354,7 @@
     <ClInclude Include="GameObjects\Player\PlayerState.h" />
     <ClInclude Include="GameObjects\Player\PlayerStopState.h" />
     <ClInclude Include="GameObjects\Player\PlayerThrowState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerUpState.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.h" />

@@ -14,13 +14,17 @@ Camera::Camera(GameObject* follow)
 
 	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height / 2.0f));
 	_position.x = _follow->GetPosition().x;
+	_position.y = _follow->GetPosition().y;
+
 
 	this->_instance = this;
-	
+
 	this->_indexCamera = -1;
 	this->_indexCameraLeft = -1;
 	this->_isPrKeyRight = false;
 	this->_isPrKeyLeft = false;
+
+	this->_countDownCameraUp = 10;
 }
 
 Camera::~Camera()
@@ -43,6 +47,7 @@ void Camera::Update(float deltaTime)
 
 	if (_follow != NULL)
 	{
+
 		if (_input->IsKeyPressed(DIK_RIGHT))
 		{
 			if (_isPrKeyLeft && (!_isPrKeyRight))
@@ -68,7 +73,6 @@ void Camera::Update(float deltaTime)
 				}
 
 			}
-			//_posPressKey.x = _position.x;
 		}
 
 		if (_indexCamera > 0)
@@ -93,7 +97,6 @@ void Camera::Update(float deltaTime)
 				_position.x = _follow->GetPosition().x;
 
 			}
-
 			else
 			{
 				if (_isPrKeyLeft)
@@ -122,7 +125,43 @@ void Camera::Update(float deltaTime)
 		}
 
 
-		_position.y = _follow->GetPosition().y;
+		/*char buffer[100];
+		sprintf_s(buffer, "check it out: %d - %d\n", _countDownCameraUp, _position.y);
+		OutputDebugStringA(buffer);*/
+
+		///////////////////////////////////////////////////////////////////////////////////
+		////////////////////////////////////////////////////////////////////////////////////
+
+		if (currentMap->GetPlayer()->GetState()->GetName() == PlayerState::StateName::Up)
+		{
+
+			if (_countDownCameraUp > 0)
+			{
+				_position.y -= 3;
+				_countDownCameraUp--;
+			}
+
+		}
+		else
+		{
+			if (_countDownCameraUp < SPACE_ALADIN_UP)
+			{
+				_position.y += 3;
+				_countDownCameraUp++;
+
+				if (_countDownCameraUp > SPACE_ALADIN_UP)
+				{
+					_countDownCameraUp = SPACE_ALADIN_UP;
+				}
+			}
+			else
+			{
+				_position.y = _follow->GetPosition().y;
+				//OutputDebugStringA("Normal\n");
+				_countDownCameraUp = SPACE_ALADIN_UP;
+			}
+		}
+
 
 		//stop when at bound of map
 		if (_position.x - _width / 2 < 0)
@@ -134,6 +173,7 @@ void Camera::Update(float deltaTime)
 			_position.y = _height / 2;
 		if (_position.y + _height / 2 > currentMap->GetHeight())
 			_position.y = currentMap->GetHeight() - _height / 2;
+
 	}
 }
 

@@ -17,6 +17,9 @@ private:
 	int _indexCameraLeft;
 	bool _isPrKeyRight;
 	bool _isPrKeyLeft;
+	
+	int _countDownCameraUp;
+
 
 public:
 	Camera(GameObject* follow = NULL);
