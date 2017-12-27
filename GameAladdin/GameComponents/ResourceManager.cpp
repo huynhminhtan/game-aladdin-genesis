@@ -17,6 +17,9 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy3Dead = new tinyxml2::XMLDocument();
 	_animationXMLEnemy3Dead->LoadFile("Resources/Enemies/enemy3_dead.xml");
 
+	_animationXMLSpringItem = new tinyxml2::XMLDocument();
+	_animationXMLSpringItem->LoadFile("Resources/Items/spring_item.xml");
+
 	_animationXMLAladdinUp = new tinyxml2::XMLDocument();
 	_animationXMLAladdinUp->LoadFile("Resources/Aladdin/aladdin_up.xml");
 
@@ -71,6 +74,8 @@ ResourceManager::ResourceManager()
 	_textureEnemyDead = graphics->LoadTexture(L"Resources/Enemies/enemy_explosion_strip10_89_114_e_f_2.png", D3DCOLOR_XRGB(255, 0, 255));/////////////////
 	_textureEnemy3Dead = graphics->LoadTexture(L"Resources/Enemies/guard_knife_hit_strip8_47_64.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureAladdinUp = graphics->LoadTexture(L"Resources/Aladdin/aladdin_look_strip3_51_117.png", D3DCOLOR_XRGB(255, 0, 255));
+	///////////////////////////////////
+	_textureSpringItem = graphics->LoadTexture(L"Resources/Items/spring_strip10_1_33_r.png", D3DCOLOR_XRGB(255, 0, 255));
 
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
@@ -118,6 +123,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLItemSpark;
 	delete _animationXMLEnemyDead;       /////////////////////////////
 	delete _animationXMLEnemy3Dead;
+	delete _animationXMLSpringItem;
 	delete _animationXMLAladdinUp;
 	delete _animationXMLEnemy1;
 	delete _animationXMLEnemy2;
@@ -137,6 +143,7 @@ ResourceManager::~ResourceManager()
 	_textureItemSpark->Release();
 	_textureEnemyDead->Release();      ///////////////////////////
 	_textureEnemy3Dead->Release();
+	_textureSpringItem->Release();
 	_textureAladdinUp->Release();
 	_textureEnemies1->Release();
 	_textureEnemies2->Release();
@@ -179,7 +186,12 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemyDead()         /////
 	return _animationXMLEnemyDead;
 }
 
-tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdinUp()         /////////////
+tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLSpringItem()         
+{
+	return _animationXMLSpringItem;
+}
+
+tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdinUp()         
 {
 	return _animationXMLAladdinUp;
 }
@@ -307,6 +319,11 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemy3Dead()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdinUp() ////////////////
 {
 	return _textureAladdinUp;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureSpringItem() ////////////////
+{
+	return _textureSpringItem;
 }
 
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies1()

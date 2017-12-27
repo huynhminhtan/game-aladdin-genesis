@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="spring" imagePath="spring_strip10_1_33_r.png" width="410" height="30">
+    <sprite x="0" 	y="0" w="41" h="30" oX="0" 	 oY="0" oW="0"	oH="0" />
+    <sprite x="41"  y="0" w="41" h="30" oX="41"   oY="0" oW="0" 	oH="0" />
+    <sprite x="82"  y="0" w="41" h="30" oX="82"   oY="0" oW="0"	oH="0" />
+    <sprite x="123" y="0" w="41" h="30" oX="123"  oY="0" oW="0" 	oH="0" />
+    <sprite x="164" y="0" w="41" h="30" oX="164"  oY="0" oW="0"	oH="0" />
+    <sprite x="205" y="0" w="41" h="30" oX="205"  oY="0" oW="0"	oH="0" />
+    <sprite x="246" y="0" w="41" h="30" oX="246"  oY="0" oW="0" 	oH="0" />
+    <sprite x="287" y="0" w="41" h="30" oX="287"  oY="0" oW="0"	oH="0" />
+    <sprite x="328" y="0" w="41" h="30" oX="328"  oY="0" oW="0" 	oH="0" />
+    <sprite x="369" y="0" w="41" h="30" oX="369"  oY="0" oW="0" 	oH="0" />
+  </Animation>
+</Animations>

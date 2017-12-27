@@ -544,6 +544,17 @@ void GameMap::Draw(Camera * camera)
 	//springboard
 	for (size_t i = 0; i < _listSpringboards.size(); i++)
 	{
+	//	_listSpringboards[i]->Draw(camera);
+	//remove not visible object
+		if (!_listSpringboards[i]->IsVisible())
+		{
+			_quadTree->RemoveStaticObject(_listSpringboards[i]);
+			_listSpringboards.erase(_listSpringboards.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
 		_listSpringboards[i]->Draw(camera);
 	}
 

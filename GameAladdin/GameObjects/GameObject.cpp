@@ -23,7 +23,6 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_noCheckCollision.push_back(GameObjectType::HorizontalBar);
 	_noCheckCollision.push_back(GameObjectType::None);
 	_noCheckCollision.push_back(GameObjectType::Rope);
-	_noCheckCollision.push_back(GameObjectType::Springboard);
 	_noCheckCollision.push_back(GameObjectType::ScoreObjects);
 }
 
