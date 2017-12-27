@@ -1,9 +1,6 @@
 #pragma once
 
-#include <d3d9.h>
-#include <d3dx9.h>
-#include <vector>
-#include <algorithm>
+#include "define.h"
 
 class GameCollision
 {
@@ -28,7 +25,11 @@ public:
 
 	bool IsCollided();
 	GameCollision::SideCollisions GetSide();
+
+	static GameCollision GameCollision::SweptAABB(RECT rect1, RECT rect2, float speedX, float speedy);
 private:
 	bool _isCollided;
 	SideCollisions _side;
+
+	static bool GameCollision::RectMeeting(const RECT& rect1, const RECT& rect2);
 };

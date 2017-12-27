@@ -85,8 +85,10 @@ void GameObject::CheckCollision()
 			continue;
 
 		//lay va cham cua other voi this
-		GameCollision collisionData = GameCollision::CheckCollision(this->GetBound(), gameObject->GetBound());
-		if (collisionData.IsCollided()) {
+		//GameCollision collisionData = GameCollision::CheckCollision(this->GetBound(), gameObject->GetBound());
+		GameCollision collisionData = GameCollision::SweptAABB(this->GetBound(), gameObject->GetBound(), this->_acceleration.x, this->_acceleration.y);
+		if (collisionData.IsCollided())
+		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
 			//goi va cham cho player voi weapon

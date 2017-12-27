@@ -10,6 +10,10 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <d3d9.h>
+#include <d3dx9.h>
+#include <algorithm>
+
 //#include "..\debug.h"
 //#include "utils.h"
 using namespace std;
@@ -35,6 +39,8 @@ using namespace std;
 #define PLAYER_JUMP_RUN_FORCE 80
 
 #define NUM_APPLE_WEAPON 969
+
+#define ENABLE_SWEPTAABB false
 
 ////////////////////////////////////////////////////////////////////////////////////////
 

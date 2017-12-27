@@ -160,7 +160,7 @@ void Game::Run()
 				time = _frameRate;
 			}
 
-			result = Frame(time / 200.0f);
+			result = Frame(time / 300.0f);
 
 			if (!result)
 			{
