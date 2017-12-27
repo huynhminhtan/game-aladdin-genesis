@@ -94,10 +94,15 @@ void MainScene::Update(float dt)
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
 		_txtScore->SetString(Player::GetScore());
-	/*	if (_gameMap->GetPlayer()->GetVelocity().y == 0)
-			_txtScore->SetString(_gameMap->GetPlayer()->GetVelocity().y);*/
+		/*	if (_gameMap->GetPlayer()->GetVelocity().y == 0)
+				_txtScore->SetString(_gameMap->GetPlayer()->GetVelocity().y);*/
 
 		_txtScore->SetString(_gameMap->GetPlayer()->AXA());
+
+	/*	char buffer[100];
+		sprintf_s(buffer, "x: %d - y:%d\n", _gameMap->GetPlayer()->GetPosition().x, 
+			_gameMap->GetPlayer()->GetPosition().y);
+		OutputDebugStringA(buffer);*/
 
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
