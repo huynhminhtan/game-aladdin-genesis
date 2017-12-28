@@ -13,7 +13,7 @@ SnakeAttack::~SnakeAttack()
 
 SnakeAttack::SnakeAttack(Enemy* jafar) :EnemyState(jafar, EnemyState::StateName::Snake)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLSnake(), "snake", ResourceManager::GetInstance()->GetTextureBossJafar(), true, 1.0f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLSnake(), "snake", ResourceManager::GetInstance()->GetTextureBossJafar(), true, 0.4f));
 	_isCreatedWeapon = false;
 }
 

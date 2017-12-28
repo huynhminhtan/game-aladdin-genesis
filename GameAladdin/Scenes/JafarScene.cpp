@@ -89,7 +89,6 @@ void JafarScene::LoadContent()
 
 void JafarScene::Update(float deltatime)
 {
-	Scene::Update(deltatime);
 
 	//check if move to next scene
 	if ((int)_gameMap != 0xDDDDDDDD)
@@ -100,6 +99,38 @@ void JafarScene::Update(float deltatime)
 		_playHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playHealthMeter->Update(deltatime);
 	}
+
+	float objectCenterX = _gameMap->GetObjectCenter()->GetPosition().x;
+	Player* player = _gameMap->GetPlayer();
+
+
+	if (player->GetPosition().x < (objectCenterX - 50))
+	{
+		player->SetAccelerationX(300);
+	}
+	else
+	{
+		if ((player->GetPosition().x) > (objectCenterX + 50))
+		{
+			player->SetAccelerationX(-300);
+		}
+		else
+		{
+			player->SetAccelerationX(0);
+			player->SetVelocityX(0);
+		}
+	}
+
+
+	//if (player->IsAllowMoveRight())
+	//	player->SetAccelerationX(100);
+	//else
+	//{
+	//	player->SetAccelerationX(0);
+	//	player->SetVelocityX(0);
+	//}
+
+	Scene::Update(deltatime);
 }
 
 void JafarScene::Draw()

@@ -35,7 +35,8 @@ public:
 		StairsEndTop,
 		StairsEndBellow,
 		AllowStairsBellow,
-		AllowStairsTop
+		AllowStairsTop,
+		ObjectCenter
 	};
 protected:
 	GameObjectType _tag;

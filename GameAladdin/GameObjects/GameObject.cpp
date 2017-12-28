@@ -23,6 +23,7 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_noCheckCollision.push_back(GameObjectType::HorizontalBar);
 	_noCheckCollision.push_back(GameObjectType::None);
 	_noCheckCollision.push_back(GameObjectType::Rope);
+	_noCheckCollision.push_back(GameObjectType::ObjectCenter);
 	_noCheckCollision.push_back(GameObjectType::ScoreObjects);
 
 	_isDisappear = false;

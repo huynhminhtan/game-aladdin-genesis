@@ -32,7 +32,10 @@ void JafarAttack::Update(float deltatime)
 		return;
 	}
 
-	if (!_isCreatedWeapon && (_animation->GetCurrentIndex() == 2 || _animation->GetCurrentIndex() == 4 || _animation->GetCurrentIndex() == 6))
+	if (!_isCreatedWeapon &&
+		(_animation->GetCurrentIndex() == 2 ||
+			_animation->GetCurrentIndex() == 4 ||
+			_animation->GetCurrentIndex() == 6))
 	{
 		_isCreatedWeapon = true;
 

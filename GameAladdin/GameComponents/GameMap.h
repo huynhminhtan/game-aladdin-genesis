@@ -42,6 +42,8 @@ private:
 	std::vector<Bottle*> _listBottles;
 	std::vector<Coal*> _listCoal;
 	std::vector<ScoreObject*> _listScoreObject;
+
+	GameObject* _objectCenter;
 public:
 	GameMap();
 	//use QuadTree* &quadTree because quadTree is init in this function
@@ -55,5 +57,7 @@ public:
 
 	int GetWidth();
 	int GetHeight();
+
+	GameObject* GetObjectCenter();
 };
 

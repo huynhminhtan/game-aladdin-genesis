@@ -426,8 +426,8 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 
 	//next scene
 	if (target->GetTag() == GameObject::GameObjectType::ToJafarScene &&
-		_health > 0 /*&&
-		SceneManager::GetInstance()->GetCurrentScene()->GetSceneName() == Scene::SceneName::Market*/)
+		_health > 0 &&
+		SceneManager::GetInstance()->GetCurrentScene()->GetSceneName() == Scene::SceneName::Market)
 	{
 		SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 		_state = NULL;

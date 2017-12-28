@@ -5,6 +5,8 @@ GameMap::GameMap()
 
 GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 {
+	_objectCenter = NULL;
+
 	_map = new Tmx::Map();
 	_map->ParseFile(filePath);
 
@@ -322,6 +324,19 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				gameObject->SetHeight(object->GetHeight());
 
 				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init ObjectCenter
+			if (objectGroup->GetName() == "ObjectCenter")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ObjectCenter);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetHeight(object->GetHeight());
+
+				_objectCenter = gameObject;
+
+				_quadTree->InsertStaticObject(gameObject);
+
 			}
 
 			//init rope
@@ -695,4 +710,9 @@ int GameMap::GetWidth()
 int GameMap::GetHeight()
 {
 	return _map->GetHeight() * _map->GetTileHeight();
+}
+
+GameObject * GameMap::GetObjectCenter()
+{
+	return _objectCenter;
 }

@@ -163,6 +163,15 @@ void Camera::Update(float deltaTime)
 		}
 
 
+
+		/// Jafa sence
+		if (SceneManager::GetInstance()->GetCurrentScene()->GetSceneName() == Scene::SceneName::Jafar)
+		{
+			_position.x = _follow->GetPosition().x;
+			_position.y = _follow->GetPosition().y;
+		}
+
+
 		//stop when at bound of map
 		if (_position.x - _width / 2 < 0)
 			_position.x = _width / 2;
