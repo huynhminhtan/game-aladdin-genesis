@@ -56,8 +56,6 @@ void MainScene::LoadContent()
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	//sourceRect.top = 689;
-	//sourceRect.bottom = 1378;
 	sourceRect.top = 689;
 	sourceRect.bottom = 1378;
 	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), true, sourceRect);
@@ -107,7 +105,7 @@ void MainScene::LoadContent()
 	_hurtApple = 0;
 	_hurtHealth = 0;
 
-	//Sound::GetInstance()->Play("PrinceAli", 0, 1);
+	Sound::GetInstance()->Play("PrinceAli", 0, 1);
 }
 
 void MainScene::Update(float dt)
