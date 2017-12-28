@@ -354,14 +354,24 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 {
 	if (target->GetTag() == GameObject::GameObjectType::Apple)
 	{
-		Sound::GetInstance()->Play("Apple_Collect", false, 1);
-		_numAppleWeapon++;
+		if (!target->GetIsDisappear())
+		{
+			_numAppleWeapon++;
+			target->SetIsDisappear(true);
+
+			Sound::GetInstance()->Play("Apple_Collect", false, 1);
+		}
 	}
 
 	if (target->GetTag() == GameObject::GameObjectType::Rubby)
 	{
-		Sound::GetInstance()->Play("Apple_Collect", false, 1);
-		_numRubby++;
+		if (!target->GetIsDisappear())
+		{
+			_numRubby++;
+			target->SetIsDisappear(true);
+
+			Sound::GetInstance()->Play("Apple_Collect", false, 1);
+		}
 	}
 
 	if (target->GetTag() == GameObject::GameObjectType::Enemies)

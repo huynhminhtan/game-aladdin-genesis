@@ -54,7 +54,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="176.793" y="565.182" width="37" height="50"/>
+  <object id="207" gid="12" x="171.96" y="547.349" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Rubby">
   <object id="328" gid="21" x="309.667" y="560.667" width="19" height="20"/>
@@ -173,7 +173,7 @@
  <objectgroup name="Springboard">
   <object id="178" gid="5" x="3442.75" y="262.75" width="43" height="18"/>
   <object id="179" gid="5" x="3458.25" y="182" width="43" height="18"/>
-  <object id="180" gid="5" x="4228.67" y="136" width="43" height="18"/>
+  <object id="180" gid="5" x="4226.17" y="153.5" width="43" height="18"/>
  </objectgroup>
  <objectgroup name="Bottle">
   <object id="264" gid="18" x="2693.5" y="517" width="20" height="33"/>

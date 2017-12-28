@@ -25,6 +25,9 @@ private:
 	Text *_txtScore;
 
 	PlayerHealthMeter *_playerHealthMeter;
+
+	int _hurtApple;
+	int _hurtHealth;
 public:
 	MainScene();
 	~MainScene();

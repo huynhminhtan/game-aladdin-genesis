@@ -38,11 +38,14 @@ using namespace std;
 #define PLAYER_JUMP_FORCE 70
 #define PLAYER_JUMP_RUN_FORCE 80
 
-#define NUM_APPLE_WEAPON 969
-#define NUM_RUBBY 10
+#define NUM_APPLE_WEAPON 7
+#define NUM_RUBBY 0
 
 #define ENABLE_SWEPTAABB false
 #define FPS 60
+
+#define HURT_APPLE 5
+#define HURT_HEALTH 30
 
 ////////////////////////////////////////////////////////////////////////////////////////
 

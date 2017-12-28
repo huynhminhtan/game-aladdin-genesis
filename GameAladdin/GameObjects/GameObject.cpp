@@ -24,6 +24,8 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_noCheckCollision.push_back(GameObjectType::None);
 	_noCheckCollision.push_back(GameObjectType::Rope);
 	_noCheckCollision.push_back(GameObjectType::ScoreObjects);
+
+	_isDisappear = false;
 }
 
 
@@ -244,3 +246,14 @@ RECT GameObject::GetBound()
 	bound.left = _position.x - ((float)_width) / 2;
 	return bound;
 }
+
+bool GameObject::GetIsDisappear()
+{
+	return _isDisappear;
+}
+
+void GameObject::SetIsDisappear(bool val)
+{
+	_isDisappear = val;
+}
+

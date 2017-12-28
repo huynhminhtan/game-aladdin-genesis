@@ -39,6 +39,7 @@ MainScene::~MainScene()
 
 	delete _playerHealthMeter;
 	_playerHealthMeter = NULL;
+
 }
 
 void MainScene::LoadContent()
@@ -99,11 +100,35 @@ void MainScene::LoadContent()
 	_txtScore = new Text(L"0", 25, 25, FW_BOLD);
 
 	_playerHealthMeter = new PlayerHealthMeter();
+
+	// hurt
+	_hurtApple = 0;
+	_hurtHealth = 0;
 }
 
 void MainScene::Update(float dt)
 {
 	Scene::Update(dt);
+
+	// check hurt
+	if (_hurtApple > 0)
+		_hurtApple = max(--_hurtApple, 0);
+
+	if (_gameMap->GetPlayer()->GetNumAppleWeapon() <= HURT_APPLE)
+	{
+		if (_hurtApple == 0)
+			_hurtApple = 100;
+	}
+
+	// check hurt
+	if (_hurtHealth > 0)
+		_hurtHealth = max(--_hurtHealth, 0);
+
+	if (_gameMap->GetPlayer()->GetHealth() <= HURT_HEALTH)
+	{
+		if (_hurtHealth == 0)
+			_hurtHealth = 100;
+	}
 
 	//check if move to next scene
 	if ((int)_gameMap != 0xDDDDDDDD)
@@ -117,10 +142,9 @@ void MainScene::Update(float dt)
 
 		_txtScore->SetString(_gameMap->GetPlayer()->AXA());
 
-	/*	char buffer[100];
-		sprintf_s(buffer, "x: %d - y:%d\n", _gameMap->GetPlayer()->GetPosition().x, 
-			_gameMap->GetPlayer()->GetPosition().y);
-		OutputDebugStringA(buffer);*/
+		char buffer[100];
+		sprintf_s(buffer, " %d \n", _gameMap->GetPlayer()->GetHealth());
+		OutputDebugStringA(buffer);
 
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
@@ -133,18 +157,28 @@ void MainScene::Draw()
 	Scene::Draw();
 	_backgroundTextures[1]->Draw(_camera);
 
-	_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 
-	_spriteCountRubby->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 180, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+	// draw apple
+	if ((_hurtApple / 5) % 4 == 0)
+	{
+		_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+		_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
+	}
 
-	_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
-
-	_txtCountRubby->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, Graphics::GetInstance()->GetScreenHeight() - 50));
+	// draw rubby
+	if (_gameMap->GetPlayer()->GetNumRubby() > 0)
+	{
+		_spriteCountRubby->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 180, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+		_txtCountRubby->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, Graphics::GetInstance()->GetScreenHeight() - 50));
+	}
 
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
 
 	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 250, 50));
 
-	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
+	if ((_hurtHealth / 5) % 4 == 0)
+	{
+		_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
+	}
 }

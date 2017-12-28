@@ -70,4 +70,5 @@ void Apple::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 	//	_isVisible = false;
 		_entryVisible = true;
 	}
+
 }

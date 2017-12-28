@@ -57,6 +57,8 @@ protected:
 
 	Input* _input;
 	Camera* _camera;
+
+	bool _isDisappear;
 public:
 	GameObject(GameObjectType tag = None, bool isMovableObject = true);
 	virtual ~GameObject();
@@ -103,5 +105,7 @@ public:
 
 	void GetBound(float &top, float &right, float &bottom, float &left);
 	RECT GetBound();
+	virtual bool GetIsDisappear();
+	virtual void SetIsDisappear(bool);
 };
 
