@@ -107,7 +107,7 @@ void MainScene::LoadContent()
 	_hurtApple = 0;
 	_hurtHealth = 0;
 
-	//Sound::GetInstance()->Play("PrinceAli", 0, 1);
+	Sound::GetInstance()->Play("PrinceAli", 0, 1);
 }
 
 void MainScene::Update(float dt)
