@@ -1,7 +1,7 @@
 #include "JafarScene.h"
 #include "../GameComponents/Sound.h"
 
-JafarScene::JafarScene() :Scene(0x9090b0)
+JafarScene::JafarScene() :Scene(0x9090b0, Scene::SceneName::Jafar)
 {
 	LoadContent();
 }
@@ -44,7 +44,7 @@ void JafarScene::LoadContent()
 	sourceRect.top = 0;
 	sourceRect.bottom = 450;
 
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true, sourceRect);
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
@@ -114,7 +114,7 @@ void JafarScene::Draw()
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
 
-	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, 50));
+	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, 50));
 
 	_playHealthMeter->Draw(D3DXVECTOR3(_playHealthMeter->GetWidth() / 2 + 10, _playHealthMeter->GetHeight() / 2 + 10, 0));
 }

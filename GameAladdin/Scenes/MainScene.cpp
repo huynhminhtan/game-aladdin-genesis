@@ -1,7 +1,7 @@
 #include "MainScene.h"
 #include "../GameComponents/Sound.h"
 
-MainScene::MainScene() :Scene(0x9090b0)
+MainScene::MainScene() :Scene(0x9090b0, Scene::SceneName::Market)
 {
 	LoadContent();
 }
@@ -112,7 +112,7 @@ void MainScene::LoadContent()
 
 void MainScene::Update(float dt)
 {
-	Scene::Update(dt);
+	
 
 	// check hurt
 	if (_hurtApple > 0)
@@ -134,6 +134,8 @@ void MainScene::Update(float dt)
 			_hurtHealth = 100;
 	}
 
+
+
 	//check if move to next scene
 	if ((int)_gameMap != 0xDDDDDDDD)
 	{
@@ -150,6 +152,8 @@ void MainScene::Update(float dt)
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
 	}
+
+	Scene::Update(dt);
 }
 
 void MainScene::Draw()

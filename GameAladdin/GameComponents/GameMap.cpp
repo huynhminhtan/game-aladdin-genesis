@@ -436,6 +436,10 @@ GameMap::~GameMap()
 
 void GameMap::Update(float deltaTime)
 {
+
+	//player
+	_player->Update(deltaTime);
+
 	//apple
 	for (size_t i = 0; i < _listApples.size(); i++)
 		_listApples[i]->Update(deltaTime);
@@ -472,8 +476,6 @@ void GameMap::Update(float deltaTime)
 	for (size_t i = 0; i < _listCoal.size(); i++)
 		_listCoal[i]->Update(deltaTime);
 
-	//player
-	_player->Update(deltaTime);
 }
 
 void GameMap::Draw(Camera * camera)

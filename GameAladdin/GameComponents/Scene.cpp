@@ -1,7 +1,8 @@
 #include "Scene.h"
 
-Scene::Scene(D3DCOLOR backgroundColor)
+Scene::Scene(D3DCOLOR backgroundColor, Scene::SceneName name)
 {
+	this->_name = name;
 	this->_backgroundColor = backgroundColor;
 	LoadContent();
 }
@@ -77,4 +78,9 @@ void Scene::Draw()
 	{
 		_listWeapon[i]->Draw(_camera);
 	}
+}
+
+Scene::SceneName Scene::GetSceneName()
+{
+	return _name;
 }
