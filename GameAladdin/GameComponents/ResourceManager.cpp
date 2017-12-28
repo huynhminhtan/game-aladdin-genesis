@@ -129,6 +129,7 @@ ResourceManager::ResourceManager()
 
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Snake.wav", "Jafar_Snake");//Jafar chuyen dang Snake
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Laugh.wav", "Jafar_Laugh");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/PrinceAli.wav", "PrinceAli");
 }
 
 

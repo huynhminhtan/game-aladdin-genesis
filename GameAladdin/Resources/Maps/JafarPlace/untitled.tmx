@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="830" tileheight="450" nextobjectid="1">
+ <tileset firstgid="1" name="palace_back_end" tilewidth="830" tileheight="450" tilecount="1" columns="1">
+  <image source="palace_back_end.png" width="830" height="450"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+</map>

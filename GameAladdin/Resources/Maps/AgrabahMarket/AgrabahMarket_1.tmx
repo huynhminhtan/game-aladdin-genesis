@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="342">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="275">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -45,24 +45,13 @@
  <tileset firstgid="20" name="ScoreObject2" tilewidth="19" tileheight="24" tilecount="1" columns="1">
   <image source="demo_tmx/ScoreObject2.png" width="19" height="24"/>
  </tileset>
- <tileset firstgid="21" name="Rubby" tilewidth="19" tileheight="20" tilecount="1" columns="1">
-  <image source="../../Items/rubby.png" width="19" height="20"/>
- </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
    eJxjZGBgAAAACAAC
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="4481.96" y="165.349" width="37" height="50"/>
- </objectgroup>
- <objectgroup name="Rubby">
-  <object id="334" gid="21" x="802.5" y="559.333" width="19" height="20"/>
-  <object id="337" gid="21" x="2329" y="651" width="19" height="20"/>
-  <object id="338" gid="21" x="2673.5" y="645.5" width="19" height="20"/>
-  <object id="339" gid="21" x="2709.5" y="644" width="19" height="20"/>
-  <object id="340" gid="21" x="2637.5" y="248" width="19" height="20"/>
-  <object id="341" gid="21" x="2639.5" y="286" width="19" height="20"/>
+  <object id="207" gid="12" x="251.79" y="591.515" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
@@ -167,8 +156,8 @@
   <object id="165" gid="4" x="4105.67" y="480" width="33" height="14"/>
  </objectgroup>
  <objectgroup name="Coal">
-  <object id="220" x="472" y="623" width="104.167" height="33.5"/>
-  <object id="221" x="839.833" y="621.5" width="105" height="34.5"/>
+  <object id="220" x="465" y="623" width="119.5" height="33.5"/>
+  <object id="221" x="833.5" y="621.5" width="117" height="34.5"/>
   <object id="222" x="1014.5" y="624.5" width="109" height="31"/>
   <object id="223" x="2020" y="656" width="111.333" height="32"/>
   <object id="224" x="3078" y="655.333" width="138" height="33.3333"/>
@@ -176,16 +165,16 @@
  <objectgroup name="Springboard">
   <object id="178" gid="5" x="3442.75" y="262.75" width="43" height="18"/>
   <object id="179" gid="5" x="3458.25" y="182" width="43" height="18"/>
-  <object id="180" gid="5" x="4226.17" y="153.5" width="43" height="18"/>
+  <object id="180" gid="5" x="4228.67" y="136" width="43" height="18"/>
  </objectgroup>
  <objectgroup name="Bottle">
   <object id="264" gid="18" x="2693.5" y="517" width="20" height="33"/>
   <object id="265" gid="18" x="3485.33" y="483.667" width="20" height="33"/>
   <object id="266" gid="18" x="3672.5" y="212" width="20" height="33"/>
  </objectgroup>
- <objectgroup name="ScoreObject1" offsetx="-31" offsety="9">
+ <objectgroup name="ScoreObject1">
   <object id="267" gid="19" x="1627" y="425.5" width="38" height="50"/>
-  <object id="268" gid="19" x="2541.5" y="95.5" width="34" height="42.5"/>
+  <object id="268" gid="19" x="2527" y="111" width="38" height="50"/>
   <object id="269" gid="19" x="3093" y="250.333" width="38" height="50"/>
   <object id="270" gid="19" x="2249" y="651" width="38" height="50"/>
   <object id="271" gid="19" x="4145.67" y="415.667" width="38" height="50"/>
@@ -255,42 +244,41 @@
    eJxjYmBgAAAADAAD
   </data>
  </layer>
- <objectgroup name="AllowStairsBellow" offsetx="52" offsety="14.6667">
-  <object id="296" x="2580" y="533" width="5.5" height="122.167"/>
- </objectgroup>
- <objectgroup name="WallPush">
-  <object id="308" x="2753.5" y="594.333" width="75.3333" height="96"/>
-  <object id="311" x="1431" y="576.667" width="42.6666" height="92"/>
-  <object id="312" x="2187.33" y="466" width="63.3333" height="227"/>
-  <object id="314" x="2792.33" y="187" width="37.3333" height="111"/>
-  <object id="315" x="3036.33" y="441.5" width="30.3333" height="75"/>
-  <object id="316" x="3549.83" y="140" width="61.8333" height="190.5"/>
-  <object id="317" x="4283.83" y="110.5" width="84.3333" height="111"/>
-  <object id="322" x="4283.83" y="110.5" width="84.3333" height="111"/>
-  <object id="323" x="4760.83" y="492.5" width="54.3333" height="132"/>
-  <object id="324" x="2613.33" y="301.5" width="37.3333" height="111"/>
-  <object id="326" x="2494" y="68" width="37.3333" height="111"/>
-  <object id="327" x="1445.33" y="277.5" width="40.3333" height="111"/>
- </objectgroup>
- <objectgroup name="AllowStairsTop">
-  <object id="302" x="2248.5" y="491.5" width="25" height="97.5"/>
- </objectgroup>
  <objectgroup name="Ground">
   <object id="99" x="0" y="635" width="1461.97" height="53.6667"/>
+  <object id="114" x="1348" y="574.333" width="127.333" height="56.5"/>
+  <object id="115" x="1310.67" y="582.333" width="164.667" height="49"/>
+  <object id="117" x="1268.67" y="590" width="206" height="42"/>
+  <object id="118" x="1228.67" y="598.666" width="246.667" height="32.6667"/>
+  <object id="119" x="1188" y="607.334" width="288" height="24"/>
+  <object id="120" x="1148" y="614.667" width="328" height="17.3334"/>
+  <object id="122" x="1387.33" y="566.417" width="112" height="10.9167"/>
   <object id="123" x="1462.67" y="664" width="2910.33" height="25.3333"/>
   <object id="128" x="1748.67" y="435.833" width="292.667" height="16.8333"/>
   <object id="129" x="1474.33" y="435.667" width="105.333" height="15"/>
   <object id="130" x="1475.67" y="387.167" width="39.3333" height="15.5"/>
   <object id="132" x="1590.67" y="275.667" width="682.667" height="15"/>
   <object id="133" x="2560.33" y="515.833" width="187" height="13.8333"/>
+  <object id="134" x="2512" y="528" width="64.5" height="13"/>
+  <object id="135" x="2456.5" y="535.5" width="70.5" height="12"/>
+  <object id="136" x="2423.5" y="542.5" width="44" height="14"/>
+  <object id="137" x="2392.5" y="551.5" width="45" height="12"/>
+  <object id="139" x="2361.5" y="560" width="47.5" height="11.5"/>
+  <object id="140" x="2329" y="567" width="43.5" height="12"/>
+  <object id="141" x="2294.5" y="574.5" width="44" height="7"/>
+  <object id="142" x="2243" y="578.5" width="48.5" height="12"/>
   <object id="143" x="2736.5" y="564.5" width="107" height="14.5"/>
   <object id="145" x="2642.5" y="403.5" width="174.5" height="16.5"/>
   <object id="146" x="2788.5" y="419.75" width="296" height="13.25"/>
   <object id="147" x="2745" y="167.5" width="83.5" height="10"/>
   <object id="148" x="2518.5" y="167" width="133" height="12.5"/>
-  <object id="149" x="2798" y="293.333" width="398" height="8.66667"/>
+  <object id="149" x="2798" y="295.333" width="398" height="8.66667"/>
   <object id="150" x="2969.33" y="167.333" width="216.667" height="11.3333"/>
   <object id="151" x="3059" y="484" width="797" height="15"/>
+  <object id="152" x="4472.67" y="623.833" width="300" height="36.8333"/>
+  <object id="153" x="4431.5" y="631" width="193" height="57.5"/>
+  <object id="155" x="4393" y="639.5" width="225.5" height="48"/>
+  <object id="156" x="4355.5" y="647.5" width="260.25" height="40.9773"/>
   <object id="157" x="4609.45" y="499.455" width="74.9091" height="15.2727"/>
   <object id="158" x="4304.33" y="469.333" width="91.3333" height="14"/>
   <object id="159" x="3976.17" y="436" width="99.167" height="15.3333"/>
@@ -300,43 +288,15 @@
   <object id="170" x="3505.33" y="120.667" width="107.333" height="9.33333"/>
   <object id="171" x="3603" y="212.167" width="1112.5" height="16.3333"/>
   <object id="181" x="3917.5" y="440" width="68" height="22"/>
-  <object id="335" x="2247.5" y="659.5" width="336" height="21.5"/>
- </objectgroup>
- <objectgroup name="Stairs">
-  <object id="120" x="1147.75" y="614.584" width="328" height="17.3334"/>
-  <object id="118" x="1228.5" y="593.749" width="246.667" height="32.6667"/>
-  <object id="115" x="1307" y="578.083" width="164.667" height="49"/>
-  <object id="122" x="1388.41" y="560.917" width="105" height="29.4167"/>
-  <object id="117" x="1267.59" y="585.5" width="206" height="42"/>
-  <object id="119" x="1188.08" y="601.917" width="288" height="24"/>
-  <object id="114" x="1349.5" y="573.75" width="127.333" height="56.5"/>
-  <object id="153" x="4429" y="630.5" width="193" height="57.5"/>
-  <object id="152" x="4471.17" y="620.833" width="300" height="36.8333"/>
-  <object id="155" x="4391.5" y="639" width="225.5" height="48"/>
-  <object id="156" x="4349" y="647.5" width="260.25" height="40.9773"/>
- </objectgroup>
- <objectgroup name="StairsEndTop" offsetx="-0.5" offsety="-3">
-  <object id="139" x="2361.5" y="560" width="47.5" height="11.5"/>
-  <object id="135" x="2485.5" y="532" width="70.5" height="15.5"/>
-  <object id="136" x="2423.5" y="542.5" width="44" height="14"/>
-  <object id="141" x="2296.5" y="571" width="43" height="10"/>
-  <object id="134" x="2513.5" y="526.5" width="64.5" height="15.5"/>
-  <object id="140" x="2329" y="567" width="43.5" height="12"/>
-  <object id="137" x="2392.5" y="551.5" width="45" height="12"/>
-  <object id="306" x="2552.5" y="519" width="64.5" height="15.5"/>
-  <object id="307" x="2461.75" y="535.25" width="70.5" height="15.5"/>
- </objectgroup>
- <objectgroup name="StairsEndBellow">
+  <object id="252" x="2285.75" y="587.5" width="38" height="14.75"/>
+  <object id="253" x="2321" y="595.25" width="34.5" height="10"/>
+  <object id="254" x="2351.5" y="602.75" width="35.75" height="10.75"/>
+  <object id="255" x="2385.25" y="611.75" width="50.75" height="9.5"/>
   <object id="256" x="2427.75" y="618.5" width="40" height="11.25"/>
   <object id="257" x="2457.25" y="627.25" width="42.5" height="9.5"/>
-  <object id="259" x="2482.75" y="643.75" width="80.5" height="12"/>
-  <object id="254" x="2351.5" y="602.75" width="35.75" height="10.75"/>
-  <object id="253" x="2321" y="595.25" width="34.5" height="10"/>
-  <object id="258" x="2472.5" y="635.5" width="58.5" height="12.25"/>
-  <object id="255" x="2385.25" y="611.75" width="50.75" height="9.5"/>
-  <object id="252" x="2285.25" y="586" width="38" height="14.75"/>
-  <object id="260" x="2542.75" y="653.5" width="43.5" height="12.5"/>
-  <object id="142" x="2243" y="578.5" width="48.5" height="12"/>
+  <object id="258" x="2472.5" y="635.5" width="58.5" height="8.25"/>
+  <object id="259" x="2482.75" y="643.75" width="80.5" height="8.5"/>
+  <object id="260" x="2544.25" y="651" width="43.5" height="12.5"/>
  </objectgroup>
  <objectgroup name="Wall">
   <object id="227" x="4772" y="226" width="44" height="463"/>
@@ -346,12 +306,12 @@
   <object id="231" x="2199" y="283" width="43" height="407"/>
   <object id="232" x="2496" y="-1" width="28" height="245"/>
   <object id="233" x="2607" y="175" width="36" height="246"/>
+  <object id="234" x="2774" y="584" width="46" height="106"/>
   <object id="235" x="2785" y="174" width="33" height="130"/>
   <object id="236" x="3026" y="432" width="32" height="91"/>
   <object id="237" x="3557.33" y="132" width="44" height="208"/>
   <object id="238" x="-27" y="-2" width="27" height="691"/>
   <object id="239" x="-1.33333" y="-30.6667" width="4776.24" height="29.3333"/>
-  <object id="234" x="2774.5" y="582" width="46" height="106"/>
  </objectgroup>
  <objectgroup name="Rope">
   <object id="125" x="2090" y="317.333" width="4" height="305.818"/>
@@ -364,6 +324,6 @@
   <object id="174" x="4355.33" y="82" width="204.667" height="9.33333"/>
  </objectgroup>
  <objectgroup name="ToJafarScene">
-  <object id="261" x="4689.5" y="109" width="50.5" height="117.5"/>
+  <object id="261" x="4689.5" y="143" width="50.5" height="83.5"/>
  </objectgroup>
 </map>

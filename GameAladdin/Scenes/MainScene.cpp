@@ -106,6 +106,8 @@ void MainScene::LoadContent()
 	// hurt
 	_hurtApple = 0;
 	_hurtHealth = 0;
+
+	//Sound::GetInstance()->Play("PrinceAli", 0, 1);
 }
 
 void MainScene::Update(float dt)
@@ -138,11 +140,8 @@ void MainScene::Update(float dt)
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtCountRubby->SetString(_gameMap->GetPlayer()->GetNumRubby());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
-		_txtScore->SetString(Player::GetScore());
-		/*	if (_gameMap->GetPlayer()->GetVelocity().y == 0)
-				_txtScore->SetString(_gameMap->GetPlayer()->GetVelocity().y);*/
 
-		_txtScore->SetString(_gameMap->GetPlayer()->AXA());
+		_txtScore->SetString(Player::GetScore());
 
 		char buffer[100];
 		sprintf_s(buffer, " %d \n", _gameMap->GetPlayer()->GetHealth());
@@ -177,7 +176,7 @@ void MainScene::Draw()
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
 
-	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 250, 50));
+	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, 50));
 
 	if ((_hurtHealth / 5) % 4 == 0)
 	{

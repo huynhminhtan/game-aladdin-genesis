@@ -550,6 +550,7 @@ void Player::SetHealth(int newHealth)
 	if (newHealth < _health)
 	{
 		Sound::GetInstance()->Play("Aladdin_Hurt", 0, 1);
+
 		if (_state->GetName() == PlayerState::StateName::Idle)
 		{
 			SetState(new PlayerDamageState(this));

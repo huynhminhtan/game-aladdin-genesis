@@ -26,8 +26,8 @@ using namespace std;
 #define SPACE_CAMERA 40
 #define SPACE_ALADIN_UP 10
 
-#define HEATH_ENEMY 130
-#define HEATH_PLAYER 1000
+#define HEATH_ENEMY 80
+#define HEATH_PLAYER 100
 
 #define DAMAGE_COAL_OF_ENEMY 10
 #define DAMAGE_OF_PLAYER 50

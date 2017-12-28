@@ -206,37 +206,4 @@
     <sprite x="614" y="2232" w="39" h="49" oX="614" oY="2282" oW="2297" oH="760" />
     <sprite x="661" y="2232" w="40" h="50" oX="661" oY="2283" oW="2297" oH="760" />
   </Animation>
-   <Animation name="Up" imagePath="Aladdin_trans.png" width="1121" height="2718">
-    <!-- <sprite x="11" y="496" w="38" h="52" oX="11" oY="496" oW="530" oH="133" /> -->
-    <sprite x="59" y="490" w="44" h="58" oX="59" oY="490" oW="530" oH="133" />
-    <sprite x="111" y="491" w="48" h="57" oX="111" oY="491" oW="530" oH="133" />
-  </Animation>
-    <Animation name="climb_throw" imagePath="Aladdin_trans.png" width="1121" height="2718">
-    <sprite x="9" y="1666" w="36" h="86" oX="9" oY="1666" oW="1718" oH="256" />
-    <sprite x="61" y="1666" w="40" h="86" oX="61" oY="1666" oW="1718" oH="256" />
-    <sprite x="115" y="1665" w="50" h="87" oX="115" oY="1665" oW="1718" oH="256" />
-    <sprite x="189" y="1664" w="30" h="88" oX="189" oY="1664" oW="1718" oH="256" />
-    <sprite x="239" y="1664" w="57" h="88" oX="239" oY="1664" oW="1718" oH="256" />
-  </Animation>
-  <Animation name="push_wall" imagePath="Aladdin_trans.png" width="1121" height="2718">
-    <sprite x="7" y="1959" w="56" h="45" oX="7" oY="1959" oW="2013" oH="721" />
-    <sprite x="75" y="1961" w="65" h="43" oX="75" oY="1961" oW="2013" oH="721" />
-    <sprite x="157" y="1961" w="70" h="44" oX="157" oY="1961" oW="2013" oH="721" />
-    <sprite x="237" y="1962" w="77" h="43" oX="237" oY="1962" oW="2013" oH="721" />
-    <sprite x="327" y="1964" w="72" h="43" oX="327" oY="1964" oW="2013" oH="721" />
-    <sprite x="416" y="1965" w="66" h="43" oX="416" oY="1965" oW="2013" oH="721" />
-    <sprite x="495" y="1965" w="75" h="43" oX="495" oY="1965" oW="2013" oH="721" />
-    <sprite x="585" y="1966" w="81" h="43" oX="585" oY="1966" oW="2013" oH="721" />
-    <sprite x="681" y="1968" w="75" h="43" oX="681" oY="1968" oW="2013" oH="721" />
-  </Animation>
-  <Animation name="Win" imagePath="Aladdin_trans.png" width="1121" height="2718">
-    <sprite x="3" y="2565" w="43" h="61" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="60" y="2566" w="48" h="58" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="123" y="2566" w="35" h="56" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="166" y="2565" w="40" h="60" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="215" y="2567" w="35" h="59" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="263" y="2564" w="37" h="62" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="310" y="2565" w="47" h="58" oX="-1" oY="-1" oW="2617" oH="415" />
-    <sprite x="372" y="2564" w="37" h="60" oX="-1" oY="-1" oW="2617" oH="415" />
-  </Animation>
 </Animations>

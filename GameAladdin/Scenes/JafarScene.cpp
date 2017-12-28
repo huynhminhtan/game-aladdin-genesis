@@ -37,12 +37,23 @@ JafarScene::~JafarScene()
 void JafarScene::LoadContent()
 {
 	Sprite* sprite;
+	RECT sourceRect;
 
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true);
+	sourceRect.left = 0;
+	sourceRect.right = 830;
+	sourceRect.top = 0;
+	sourceRect.bottom = 450;
+
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true, sourceRect);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBossBg(), true);
+	sourceRect.left = 0;
+	sourceRect.right = 830;
+	sourceRect.top = 0;
+	sourceRect.bottom = 450;
+
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBossBg(), true, sourceRect);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
@@ -74,7 +85,6 @@ void JafarScene::LoadContent()
 
 	_playHealthMeter = new PlayerHealthMeter();
 
-	Sound::GetInstance()->Play("Jafar_Laugh", 0, 1);
 }
 
 void JafarScene::Update(float deltatime)
