@@ -251,6 +251,7 @@
     <ClCompile Include="Scenes\CompleteScene.cpp" />
     <ClCompile Include="Scenes\JafarScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
+    <ClCompile Include="Scenes\SelectScene.cpp" />
     <ClCompile Include="TmxParser\base64\base64.cpp" />
     <ClCompile Include="TmxParser\miniz.c" />
     <ClCompile Include="TmxParser\tinyxml2\tinyxml2.cpp" />
@@ -372,6 +373,7 @@
     <ClInclude Include="Scenes\CompleteScene.h" />
     <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
+    <ClInclude Include="Scenes\SelectScene.h" />
     <ClInclude Include="TmxParser\base64\base64.h" />
     <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h" />
     <ClInclude Include="TmxParser\TmxColor.h" />

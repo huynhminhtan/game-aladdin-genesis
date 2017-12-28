@@ -44,6 +44,8 @@ private:
 	LPDIRECT3DTEXTURE9 _textureEnemies2;
 	LPDIRECT3DTEXTURE9 _textureItems;
 	LPDIRECT3DTEXTURE9 _textureCamel;
+	LPDIRECT3DTEXTURE9 _textureSelect;
+	LPDIRECT3DTEXTURE9 _textureSelectKni;
 	LPDIRECT3DTEXTURE9 _textureItemSpark;
 	LPDIRECT3DTEXTURE9 _textureEnemyDead;       //////////////////
 	LPDIRECT3DTEXTURE9 _textureEnemy3Dead;
@@ -126,5 +128,13 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureMapBossBg();
 	LPDIRECT3DTEXTURE9 GetTextureMonkey();
 	LPDIRECT3DTEXTURE9 GetTextureCompleteScene();
+	LPDIRECT3DTEXTURE9 GetTextureSelect();
+	LPDIRECT3DTEXTURE9 GetTextureSelectKni();
+	/*_textureSelectKni*/
+
+
+
+
+	//LPDIRECT3DTEXTURE9 _textureSelectKni;
 
 };

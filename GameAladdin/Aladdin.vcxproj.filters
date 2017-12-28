@@ -432,6 +432,9 @@
     <ClCompile Include="Scenes\CompleteScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\SelectScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -792,6 +795,9 @@
       <Filter>GameObjects\Items</Filter>
     </ClInclude>
     <ClInclude Include="Scenes\CompleteScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\SelectScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>

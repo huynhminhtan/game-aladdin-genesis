@@ -3,6 +3,7 @@
 #include "../Scenes/MainScene.h"
 #include "../Scenes/JafarScene.h"
 #include "../Scenes/CompleteScene.h"
+#include "../Scenes/SelectScene.h"
 
 Game::Game(LPCWSTR applicationName, float fps, bool isFullScreen)
 {
@@ -76,6 +77,7 @@ bool Game::Initialize()
 	//SceneManager::GetInstance()->ReplaceScene(new MainScene());
 	//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 	SceneManager::GetInstance()->ReplaceScene(new CompleteScene());
+	SceneManager::GetInstance()->ReplaceScene(new SelectScene());
 
 	// init rand
 	srand(time(0));
@@ -162,7 +164,7 @@ void Game::Run()
 				time = _frameRate;
 			}
 
-			result = Frame(time / 200.0f);
+			result = Frame(time / 300.0f);
 
 			if (!result)
 			{

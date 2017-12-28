@@ -102,7 +102,9 @@ ResourceManager::ResourceManager()
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureAgrabahMarket = graphics->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
+	_textureSelect = graphics->LoadTexture(L"Resources/Items/menu.png");
 
+	_textureSelectKni = graphics->LoadTexture(L"Resources/Items/menu_select.png");
 	//man boss:
 	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/jafar.png");
 	_textureMapBossBg = graphics->LoadTexture(L"Resources/Maps/JafarPlace/pillars.png");
@@ -184,6 +186,7 @@ ResourceManager::~ResourceManager()
 	_textureAgrabahMarket->Release();
 	_textureMonkey->Release();
 	_textureComplete->Release();
+	_textureSelect->Release();
 
 	//man boss:
 	delete _animationXMLJafar;
@@ -444,4 +447,14 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMonkey()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureCompleteScene()
 {
 	return _textureComplete;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureSelect()
+{
+	return _textureSelect;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureSelectKni()
+{
+	return _textureSelectKni;
 }

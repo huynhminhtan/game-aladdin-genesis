@@ -15,7 +15,8 @@ public:
 		None,
 		Jafar,
 		Market,
-		CompleteScene
+		CompleteScene,
+		SelectScene
 	};
 
 	Scene(D3DCOLOR backgroundColor = 0x000000, Scene::SceneName name = None);
