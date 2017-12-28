@@ -31,6 +31,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLSpringItem;
 	tinyxml2::XMLDocument *_animationXMLAladdinUp;
 	tinyxml2::XMLDocument *_animationXMLItemsRubby;
+	tinyxml2::XMLDocument *_animationXMLMonkey;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -50,6 +51,7 @@ private:
 	LPDIRECT3DTEXTURE9 _textureClimbAttack;
 	LPDIRECT3DTEXTURE9 _textureSpringItem;
 	LPDIRECT3DTEXTURE9 _textureAladdinUp;
+	LPDIRECT3DTEXTURE9 _textureMonkey;
 
 	//map 1
 	LPDIRECT3DTEXTURE9 _textureAgrabahMarket;
@@ -61,6 +63,10 @@ private:
 	//map 2 TEST
 	LPDIRECT3DTEXTURE9 _textureMapBoss;
 	LPDIRECT3DTEXTURE9 _textureMapBossBg;
+
+	// 
+	LPDIRECT3DTEXTURE9 _textureComplete;
+
 public:
 	ResourceManager();
 	~ResourceManager();
@@ -98,6 +104,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLExplosions();
 	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon1();
 	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon2();
+	tinyxml2::XMLDocument* GetAnimationXMLMonkey();
 
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();
 	LPDIRECT3DTEXTURE9 GetTextureItemSpark();
@@ -117,4 +124,7 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureBossJafar();
 	LPDIRECT3DTEXTURE9 GetTextureMapBoss();
 	LPDIRECT3DTEXTURE9 GetTextureMapBossBg();
+	LPDIRECT3DTEXTURE9 GetTextureMonkey();
+	LPDIRECT3DTEXTURE9 GetTextureCompleteScene();
+
 };

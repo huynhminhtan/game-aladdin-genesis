@@ -13,9 +13,9 @@ Camera::Camera(GameObject* follow)
 	_height = Graphics::GetInstance()->GetScreenHeight() / SCALE_FACTOR;
 
 	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height / 2.0f));
-	_position.x = _follow->GetPosition().x;
-	_position.y = _follow->GetPosition().y;
-
+	
+	if (_follow != NULL)
+		_position.x = _follow->GetPosition().x;
 
 	this->_instance = this;
 

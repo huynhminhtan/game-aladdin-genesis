@@ -65,6 +65,10 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy6Weapon = new tinyxml2::XMLDocument();
 	_animationXMLEnemy6Weapon->LoadFile("Resources/Weapons/EnemiesWeapons/Enemy-6-Weapon-Animations.xml");
 
+
+	_animationXMLMonkey = new tinyxml2::XMLDocument();
+	_animationXMLMonkey->LoadFile("Resources/Items/Monkey-Animations.xml");
+
 	_animationXMLCamel = new tinyxml2::XMLDocument();
 	_animationXMLCamel->LoadFile("Resources/Items/Camel-Animation.xml");
 
@@ -84,6 +88,8 @@ ResourceManager::ResourceManager()
 	_textureEnemy3Dead = graphics->LoadTexture(L"Resources/Enemies/guard_knife_hit_strip8_47_64.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureAladdinUp = graphics->LoadTexture(L"Resources/Aladdin/aladdin_look_strip3_51_117.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureAladdinUp = graphics->LoadTexture(L"Resources/Aladdin/aladdin_throw4_strip6_79_161.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureMonkey = graphics->LoadTexture(L"Resources/Items/Monkey.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureComplete = graphics->LoadTexture(L"Resources/Items/victory_116_141.png", D3DCOLOR_XRGB(255, 0, 255));
 
 	///////////////////////////////////
 	_textureSpringItem = graphics->LoadTexture(L"Resources/Items/spring_strip10_1_33_r.png", D3DCOLOR_XRGB(255, 0, 255));
@@ -162,6 +168,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLPlayerHealthMeter;
 	delete _animationXMLCamel;
 	delete _animationXMLCoalFire;
+	delete _animationXMLMonkey;
 
 	_textureAladdin->Release();
 	_textureItemSpark->Release();
@@ -175,6 +182,8 @@ ResourceManager::~ResourceManager()
 	_textureItems->Release();
 	_textureCamel->Release();
 	_textureAgrabahMarket->Release();
+	_textureMonkey->Release();
+	_textureComplete->Release();
 
 	//man boss:
 	delete _animationXMLJafar;
@@ -420,4 +429,19 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBoss()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBossBg()
 {
 	return _textureMapBossBg;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLMonkey()
+{
+	return _animationXMLMonkey;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMonkey()
+{
+	return _textureMonkey;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureCompleteScene()
+{
+	return _textureComplete;
 }

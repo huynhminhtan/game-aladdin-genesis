@@ -429,6 +429,9 @@
     <ClCompile Include="GameObjects\Items\Rubby.cpp">
       <Filter>GameObjects\Items</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\CompleteScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -787,6 +790,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Items\Rubby.h">
       <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\CompleteScene.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

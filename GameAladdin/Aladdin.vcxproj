@@ -248,6 +248,7 @@
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\Weapon.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scenes\CompleteScene.cpp" />
     <ClCompile Include="Scenes\JafarScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
     <ClCompile Include="TmxParser\base64\base64.cpp" />
@@ -368,6 +369,7 @@
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\Weapon.h" />
+    <ClInclude Include="Scenes\CompleteScene.h" />
     <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
     <ClInclude Include="TmxParser\base64\base64.h" />
