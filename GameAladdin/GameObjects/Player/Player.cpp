@@ -7,6 +7,7 @@
 #include "../Weapons/Weapon.h"
 #include "../../GameComponents/Sound.h"
 #include "../../Scenes/JafarScene.h"
+#include "../../Scenes/CompleteScene.h"
 
 int Player::_timesPlay = 3;
 int Player::_score = 0;
@@ -429,7 +430,8 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		_health > 0 &&
 		SceneManager::GetInstance()->GetCurrentScene()->GetSceneName() == Scene::SceneName::Market)
 	{
-		SceneManager::GetInstance()->ReplaceScene(new JafarScene());
+		SceneManager::GetInstance()->ReplaceScene(new CompleteScene());
+		//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 		_state = NULL;
 		return;
 	}

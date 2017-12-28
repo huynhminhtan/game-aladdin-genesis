@@ -76,7 +76,7 @@ bool Game::Initialize()
 	// Show MainScene
 	//SceneManager::GetInstance()->ReplaceScene(new MainScene());
 	//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
-	SceneManager::GetInstance()->ReplaceScene(new CompleteScene());
+	//SceneManager::GetInstance()->ReplaceScene(new CompleteScene());
 	SceneManager::GetInstance()->ReplaceScene(new SelectScene());
 
 	// init rand

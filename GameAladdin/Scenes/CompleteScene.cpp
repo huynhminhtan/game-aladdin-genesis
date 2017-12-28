@@ -1,6 +1,8 @@
 #include "CompleteScene.h"
 #include "../GameComponents/Graphics.h"
 #include "../GameComponents/Sound.h"
+#include "../GameComponents/SceneManager.h"
+#include "../Scenes/JafarScene.h"
 
 CompleteScene::CompleteScene() :Scene(0x000000, Scene::SceneName::CompleteScene)
 {
@@ -35,11 +37,11 @@ void CompleteScene::LoadContent()
 	RECT sourceRect;
 
 	sourceRect.left = 0;
-	sourceRect.right = 320;
+	sourceRect.right = 232;
 	sourceRect.top = 0;
-	sourceRect.bottom = 256;
+	sourceRect.bottom = 141;
 
-	_bg = new Sprite(ResourceManager::GetInstance()->GetTextureSelect(), true, sourceRect);
+	_bg = new Sprite(ResourceManager::GetInstance()->GetTextureCompleteScene(), true, sourceRect);
 	_bg->SetPosition(Graphics::GetInstance()->GetScreenWidth()/2 -165, Graphics::GetInstance()->GetScreenHeight() / 2 + 100);
 
 	Sound::GetInstance()->Play("LevelComplete", false, 1);
@@ -53,11 +55,18 @@ void CompleteScene::Update(float deltatime)
 	D3DXVECTOR2 _positonAladin = _animationAladdin->GetPosition();
 	D3DXVECTOR2 _positonMonkey = _animationMonkey->GetPosition();
 
+	if (_positonAladin.x < 0)
+	{
+		SceneManager::GetInstance()->ReplaceScene(new JafarScene());
+		return;
+	}
+
 	_animationAladdin->SetPosition(_positonAladin.x - 30 * deltatime, Graphics::GetInstance()->GetScreenHeight() / 2 + 180);
 	_animationMonkey->SetPosition(_positonMonkey.x - 30 * deltatime, Graphics::GetInstance()->GetScreenHeight() / 2 + 180);
 
 	_animationAladdin->Update(deltatime);
 	_animationMonkey->Update(deltatime);
+	
 }
 
 void CompleteScene::Draw()
