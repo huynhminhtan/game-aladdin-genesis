@@ -54,7 +54,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="171.96" y="547.349" width="37" height="50"/>
+  <object id="207" gid="12" x="355.96" y="619.349" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Rubby">
   <object id="328" gid="21" x="309.667" y="560.667" width="19" height="20"/>
@@ -164,8 +164,8 @@
   <object id="165" gid="4" x="4105.67" y="480" width="33" height="14"/>
  </objectgroup>
  <objectgroup name="Coal">
-  <object id="220" x="465" y="623" width="119.5" height="33.5"/>
-  <object id="221" x="833.5" y="621.5" width="117" height="34.5"/>
+  <object id="220" x="472" y="623" width="104.167" height="33.5"/>
+  <object id="221" x="839.833" y="621.5" width="105" height="34.5"/>
   <object id="222" x="1014.5" y="624.5" width="109" height="31"/>
   <object id="223" x="2020" y="656" width="111.333" height="32"/>
   <object id="224" x="3078" y="655.333" width="138" height="33.3333"/>
