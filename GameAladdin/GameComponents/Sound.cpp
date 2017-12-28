@@ -40,7 +40,8 @@ Sound::Sound(HWND hWnd)
 	{
 		MessageBox(NULL, L"Can not create sound primaryBuffer", L"Error", MB_OK);
 	}
-	_volume = 100.0f;
+	//_volume = 100.0f;
+	_volume = 1.0f;
 }
 
 Sound::~Sound()

@@ -1,4 +1,4 @@
-#include "FloatGround.h"
+﻿#include "FloatGround.h"
 
 
 
@@ -30,11 +30,30 @@ void FloatGround::Draw(Camera * camera)
 }
 
 void FloatGround::OnCollision(GameObject * target, GameCollision::SideCollisions side)
-{
+{/*
 	if (target->GetTag() == GameObject::GameObjectType::Players)
 	{
-		_velocity.y = 0;
-		_acceleration.y = 60;
+		if (side == (GameCollision::SideCollisions::Top ||
+			GameCollision::SideCollisions::TopRight ||
+			GameCollision::SideCollisions::TopLeft))
+		{
+			_velocity.y = 0;
+			_acceleration.y = 60;
+		}
+	}*/
+
+
+	if (target->GetTag() == GameObject::GameObjectType::Players)
+	{
+		GameCollision collisionData = GameCollision::SweptAABB(target->GetBound(), this->GetBound(), this->_acceleration.x, this->_acceleration.y);
+
+		if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
+			|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+			|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+		{
+			_velocity.y = 0;
+			_acceleration.y = 60;
+		}
 	}
 
 	if (target->GetTag() == GameObject::GameObjectType::Ground)
