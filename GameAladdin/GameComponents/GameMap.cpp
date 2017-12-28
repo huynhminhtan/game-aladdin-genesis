@@ -59,6 +59,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(apple);
 			}
 
+			//init apple
+			if (objectGroup->GetName() == "Rubby")
+			{
+				Rubby *rubby = new Rubby();
+				rubby->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listRubbies.push_back(rubby);
+
+				_quadTree->InsertStaticObject(rubby);
+			}
+
 			//init float ground
 			if (objectGroup->GetName() == "FloatGround")
 			{
@@ -357,6 +368,13 @@ GameMap::~GameMap()
 	}
 	_listApples.clear();
 
+	for (size_t i = 0; i < _listRubbies.size(); i++)
+	{
+		if (_listRubbies[i])
+			delete _listRubbies[i];
+	}
+	_listRubbies.clear();
+
 	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
 	{
 		if (_listFloatGrounds[i])
@@ -421,6 +439,10 @@ void GameMap::Update(float deltaTime)
 	//apple
 	for (size_t i = 0; i < _listApples.size(); i++)
 		_listApples[i]->Update(deltaTime);
+
+	//rubby
+	for (size_t i = 0; i < _listRubbies.size(); i++)
+		_listRubbies[i]->Update(deltaTime);
 
 	//float ground
 	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
@@ -523,6 +545,22 @@ void GameMap::Draw(Camera * camera)
 
 		//visible -> draw
 		_listApples[i]->Draw(camera);
+	}
+
+	//rubby
+	for (size_t i = 0; i < _listRubbies.size(); i++)
+	{
+		//remove not visible object
+		if (!_listRubbies[i]->IsVisible())
+		{
+			_quadTree->RemoveStaticObject(_listRubbies[i]);
+			_listRubbies.erase(_listRubbies.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listRubbies[i]->Draw(camera);
 	}
 
 	//float ground

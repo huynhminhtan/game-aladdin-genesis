@@ -18,8 +18,15 @@ MainScene::~MainScene()
 	delete _spriteCountApple;
 	_spriteCountApple = NULL;
 
+
+	delete _spriteCountRubby;
+	_spriteCountRubby = NULL;
+
 	delete _txtCountApple;
 	_txtCountApple = NULL;
+
+	delete _txtCountRubby;
+	_txtCountRubby = NULL;
 
 	delete _spriteTimesPlay;
 	_spriteTimesPlay = NULL;
@@ -68,6 +75,16 @@ void MainScene::LoadContent()
 	_spriteCountApple->SetScale(D3DXVECTOR2(2, 2));
 	_txtCountApple = new Text(L"0", 15, 15, FW_BOLD);
 
+	RECT rubbySourceRect;
+	rubbySourceRect.left = 340;
+	rubbySourceRect.right = 357;
+	rubbySourceRect.top = 111;
+	rubbySourceRect.bottom = 127;
+
+	_spriteCountRubby = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, rubbySourceRect);
+	_spriteCountRubby->SetScale(D3DXVECTOR2(2, 2));
+	_txtCountRubby = new Text(L"0", 15, 15, FW_BOLD);
+
 	//times play counter
 	RECT temp;
 	temp.left = 367;
@@ -92,6 +109,7 @@ void MainScene::Update(float dt)
 	if ((int)_gameMap != 0xDDDDDDDD)
 	{
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+		_txtCountRubby->SetString(_gameMap->GetPlayer()->GetNumRubby());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
 		_txtScore->SetString(Player::GetScore());
 		/*	if (_gameMap->GetPlayer()->GetVelocity().y == 0)
@@ -116,7 +134,12 @@ void MainScene::Draw()
 	_backgroundTextures[1]->Draw(_camera);
 
 	_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+
+	_spriteCountRubby->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 180, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+
 	_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
+
+	_txtCountRubby->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, Graphics::GetInstance()->GetScreenHeight() - 50));
 
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="rubby" imagePath="spring_strip10_1_33_r.png" width="410" height="30">
+    <sprite x="340"  y="111" w="17" h="16" oX="340"   oY="111" oW="0"	oH="0" />
+    <sprite x="432"  y="110" w="17" h="17" oX="432"   oY="110" oW="0" 	oH="0" />
+	<sprite x="522"  y="112" w="17" h="16" oX="522"   oY="112" oW="0" 	oH="0" />
+  </Animation>
+</Animations>

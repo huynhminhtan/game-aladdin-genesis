@@ -19,7 +19,7 @@ private:
 	//when colliding with coal, each duration, player's health will decrease
 	float _collidedWithCoalDuration;
 
-	int _health, _damage, _numAppleWeapon;
+	int _health, _damage, _numAppleWeapon, _numRubby;
 	float _deltaTime;
 
 	bool _allowStairsBellow;
@@ -83,6 +83,9 @@ public:
 	}
 
 	bool GetIsPushWall();
+
+	int GetNumRubby();
+	void SetNumRubby(int value);
 
 };
 

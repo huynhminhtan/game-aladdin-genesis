@@ -17,6 +17,7 @@
 #include "../GameObjects/Items/Camel.h"
 #include "../GameObjects/Items/Bottle.h"
 #include "../GameObjects/Items/Coal.h"
+#include "../GameObjects/Items/Rubby.h"
 #include "../GameObjects/Items/ScoreObject/ScoreObject1.h"
 #include "../GameObjects/Items/ScoreObject/ScoreObject2.h"
 
@@ -33,6 +34,7 @@ private:
 	Player* _player;
 
 	std::vector<Apple*> _listApples;
+	std::vector<Rubby*> _listRubbies;
 	std::vector<FloatGround*> _listFloatGrounds;
 	std::vector<Springboard*> _listSpringboards;
 	std::vector<Enemy*> _listEnemies;

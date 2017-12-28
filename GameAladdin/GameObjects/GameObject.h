@@ -17,6 +17,7 @@ public:
 		Players,
 		Enemies,
 		Apple,
+		Rubby,
 		Weapons,
 		Ground,
 		Wall,

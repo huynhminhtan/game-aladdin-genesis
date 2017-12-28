@@ -426,6 +426,9 @@
     <ClCompile Include="GameObjects\Player\PlayerPushWallState.cpp">
       <Filter>GameObjects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\Rubby.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -781,6 +784,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Player\PlayerPushWallState.h">
       <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Rubby.h">
+      <Filter>GameObjects\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

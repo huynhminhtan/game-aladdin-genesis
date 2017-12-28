@@ -16,6 +16,9 @@ private:
 	Text *_txtCountApple;
 	Sprite *_spriteCountApple;
 
+	Text *_txtCountRubby;
+	Sprite *_spriteCountRubby;
+
 	Text *_txtTimesPlay;
 	Sprite *_spriteTimesPlay;
 

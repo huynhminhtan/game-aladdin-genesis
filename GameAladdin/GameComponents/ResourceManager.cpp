@@ -17,6 +17,9 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy3Dead = new tinyxml2::XMLDocument();
 	_animationXMLEnemy3Dead->LoadFile("Resources/Enemies/enemy3_dead.xml");
 
+	_animationXMLItemsRubby = new tinyxml2::XMLDocument();
+	_animationXMLItemsRubby->LoadFile("Resources/Items/rubby_item.xml");
+
 	_animationXMLPlayerClimbThrow = new tinyxml2::XMLDocument();
 	_animationXMLPlayerClimbThrow->LoadFile("Resources/Aladdin/climb_throw_new.xml");
 
@@ -134,6 +137,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLItemSpark;
 	delete _animationXMLEnemyDead;       /////////////////////////////
 	delete _animationXMLEnemy3Dead;
+	delete _animationXMLItemsRubby;
 	delete _animationXMLSpringItem;
 	delete _animationXMLAladdinUp;
 	delete _animationXMLEnemy1;
@@ -217,6 +221,11 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdinUp()
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemy3Dead()       
 {
 	return _animationXMLEnemy3Dead;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLItemsRubby()
+{
+	return _animationXMLItemsRubby;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerClimbThrow()

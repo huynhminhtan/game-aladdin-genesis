@@ -25,6 +25,7 @@ Player::Player() :GameObject(GameObject::GameObjectType::Players, true)
 {
 	Reset();
 	_numAppleWeapon = NUM_APPLE_WEAPON;
+	_numRubby = NUM_RUBBY;
 }
 
 Player::~Player()
@@ -357,6 +358,12 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		_numAppleWeapon++;
 	}
 
+	if (target->GetTag() == GameObject::GameObjectType::Rubby)
+	{
+		Sound::GetInstance()->Play("Apple_Collect", false, 1);
+		_numRubby++;
+	}
+
 	if (target->GetTag() == GameObject::GameObjectType::Enemies)
 	{
 		Enemy *enemy = dynamic_cast<Enemy*>(target);
@@ -578,6 +585,17 @@ void Player::SetNumAppleWeapon(int value)
 {
 	_numAppleWeapon = value;
 }
+
+int Player::GetNumRubby()
+{
+	return _numRubby;
+}
+
+void Player::SetNumRubby(int value)
+{
+	_numRubby = value;
+}
+
 
 bool Player::GetIsPushWall()
 {

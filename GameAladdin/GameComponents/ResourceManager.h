@@ -30,6 +30,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLClimbAttack;
 	tinyxml2::XMLDocument *_animationXMLSpringItem;
 	tinyxml2::XMLDocument *_animationXMLAladdinUp;
+	tinyxml2::XMLDocument *_animationXMLItemsRubby;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -70,6 +71,7 @@ public:
 	
 	tinyxml2::XMLDocument* GetAnimationXMLEnemyDead();  ///////////////////////
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3Dead();
+	tinyxml2::XMLDocument* GetAnimationXMLItemsRubby();
 	tinyxml2::XMLDocument* GetAnimationXMLPlayerClimbThrow();
 	tinyxml2::XMLDocument* GetAnimationXMLClimbAttack();
 	tinyxml2::XMLDocument* GetAnimationXMLSpringItem();

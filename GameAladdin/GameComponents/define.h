@@ -39,6 +39,7 @@ using namespace std;
 #define PLAYER_JUMP_RUN_FORCE 80
 
 #define NUM_APPLE_WEAPON 969
+#define NUM_RUBBY 10
 
 #define ENABLE_SWEPTAABB false
 #define FPS 60

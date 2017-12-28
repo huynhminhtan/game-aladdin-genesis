@@ -207,6 +207,7 @@
     <ClCompile Include="GameObjects\Items\Camel.cpp" />
     <ClCompile Include="GameObjects\Items\Coal.cpp" />
     <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
+    <ClCompile Include="GameObjects\Items\Rubby.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject1.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp" />
@@ -327,6 +328,7 @@
     <ClInclude Include="GameObjects\Items\Camel.h" />
     <ClInclude Include="GameObjects\Items\Coal.h" />
     <ClInclude Include="GameObjects\Items\FloatGround.h" />
+    <ClInclude Include="GameObjects\Items\Rubby.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject1.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h" />
