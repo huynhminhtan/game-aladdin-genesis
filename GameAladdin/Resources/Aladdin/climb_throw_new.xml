@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="climb_throw" imagePath="aladdin_throw4_strip6_79_161.png" width="480" height="100">
+    <sprite x="0" y="0"   w="72" h="90" oX="0"    oY="0"   oW="0" oH="0" />
+    <sprite x="72" y="0"  w="72" h="90" oX="72"   oY="0"  oW="0" oH="0" />
+    <sprite x="144" y="0" w="72" h="90" oX="144"  oY="0" oW="0" oH="0" />
+    <sprite x="216" y="0" w="72" h="90" oX="216"  oY="0" oW="0" oH="0" />
+
+    <sprite x="360" y="0" w="72" h="90" oX="360"  oY="0" oW="0" oH="0" />
+  </Animation>
+</Animations>

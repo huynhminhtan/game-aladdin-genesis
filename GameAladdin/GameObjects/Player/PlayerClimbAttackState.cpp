@@ -13,7 +13,7 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 	_ropeOrHorizontalBar = ropeOrHorizontalBar;
 	_fromState = fromState;
 
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLClimbAttack(), "climb_attack", ResourceManager::GetInstance()->GetTextureClimbAttack(), true, 0.5f));
 
 	_player->SetAccelerationY(0);
 	_player->SetVelocityY(0);
@@ -21,7 +21,10 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 	_player->AllowMoveLeft(false);
 	_player->AllowMoveRight(false);
 
+	_checkPlussPosition = true;
+
 	Sound::GetInstance()->Play("Low_Sword", 0, 1);
+
 }
 
 
@@ -33,11 +36,20 @@ void PlayerClimbAttackState::Update(float deltaTime)
 {
 	PlayerState::Update(deltaTime);
 
+
+	if (_checkPlussPosition &&
+		_fromState == PlayerState::StateName::ClimbHorizontalIde)
+	{
+		_player->SetPositionY(_player->GetPosition().y - 7);
+
+		_checkPlussPosition = false;
+	}
+
 	if (_animation->IsFinish())//change state
 	{
 		if (_fromState == PlayerState::StateName::ClimbVertical)
 			_player->SetState(new PlayerClimbVerticalState(_player, _ropeOrHorizontalBar));
-		else if(_fromState == PlayerState::StateName::ClimbHorizontalIde)
+		else if (_fromState == PlayerState::StateName::ClimbHorizontalIde)
 			_player->SetState(new PlayerClimbHorizontalIdleState(_player, _ropeOrHorizontalBar), false);
 		return;
 	}

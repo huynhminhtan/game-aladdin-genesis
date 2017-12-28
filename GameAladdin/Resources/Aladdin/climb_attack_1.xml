@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="climb_attack" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="0" 	y="0" w="76" h="89" oX="0" 	oY="0" oW="-77" oH="257" />
+    <sprite x="76" 	y="0" w="76" h="89" oX="76"  oY="0" oW="-77" oH="257" />
+	<sprite x="152" y="0" w="76" h="89" oX="152" oY="0" oW="-77" oH="257" />
+    <sprite x="228" y="0" w="76" h="89" oX="228" oY="0" oW="-77" oH="257" />
+	<sprite x="304" y="0" w="76" h="89" oX="304" oY="0" oW="-77" oH="257" />
+    <sprite x="380" y="0" w="76" h="89" oX="380" oY="0" oW="-77" oH="257" />
+	<sprite x="456" y="0" w="76" h="89" oX="456" oY="0" oW="-77" oH="257" />
+  </Animation>
+</Animations>

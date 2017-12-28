@@ -17,6 +17,12 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy3Dead = new tinyxml2::XMLDocument();
 	_animationXMLEnemy3Dead->LoadFile("Resources/Enemies/enemy3_dead.xml");
 
+	_animationXMLPlayerClimbThrow = new tinyxml2::XMLDocument();
+	_animationXMLPlayerClimbThrow->LoadFile("Resources/Aladdin/climb_throw_new.xml");
+
+	_animationXMLClimbAttack = new tinyxml2::XMLDocument();
+	_animationXMLClimbAttack->LoadFile("Resources/Aladdin/climb_attack_1.xml");
+
 	_animationXMLSpringItem = new tinyxml2::XMLDocument();
 	_animationXMLSpringItem->LoadFile("Resources/Items/spring_item.xml");
 
@@ -74,8 +80,13 @@ ResourceManager::ResourceManager()
 	_textureEnemyDead = graphics->LoadTexture(L"Resources/Enemies/enemy_explosion_strip10_89_114_e_f_2.png", D3DCOLOR_XRGB(255, 0, 255));/////////////////
 	_textureEnemy3Dead = graphics->LoadTexture(L"Resources/Enemies/guard_knife_hit_strip8_47_64.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureAladdinUp = graphics->LoadTexture(L"Resources/Aladdin/aladdin_look_strip3_51_117.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureAladdinUp = graphics->LoadTexture(L"Resources/Aladdin/aladdin_throw4_strip6_79_161.png", D3DCOLOR_XRGB(255, 0, 255));
+
 	///////////////////////////////////
 	_textureSpringItem = graphics->LoadTexture(L"Resources/Items/spring_strip10_1_33_r.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureClimbAttack = graphics->LoadTexture(L"Resources/Aladdin/aladdin_attack4_strip7_83_185.png", D3DCOLOR_XRGB(255, 0, 255));
+
+	_texturePlayerClimbThrow = graphics->LoadTexture(L"Resources/Aladdin/aladdin_throw4_strip6_79_161.png", D3DCOLOR_XRGB(255, 0, 255));
 
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
@@ -130,6 +141,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy3;
 	delete _animationXMLEnemy4;
 	delete _animationXMLEnemy5;
+	delete _animationXMLClimbAttack;
 	delete _animationXMLEnemy6;
 	delete _animationXMLAppleWeapon;
 	delete _animationXMLCamelWeapon;
@@ -146,6 +158,7 @@ ResourceManager::~ResourceManager()
 	_textureSpringItem->Release();
 	_textureAladdinUp->Release();
 	_textureEnemies1->Release();
+	_textureClimbAttack->Release();
 	_textureEnemies2->Release();
 	_textureItems->Release();
 	_textureCamel->Release();
@@ -186,6 +199,11 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemyDead()         /////
 	return _animationXMLEnemyDead;
 }
 
+tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLClimbAttack()         /////////////
+{
+	return _animationXMLClimbAttack;
+}
+
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLSpringItem()         
 {
 	return _animationXMLSpringItem;
@@ -199,6 +217,11 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdinUp()
 tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLEnemy3Dead()       
 {
 	return _animationXMLEnemy3Dead;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerClimbThrow()
+{
+	return _animationXMLPlayerClimbThrow;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy1()
@@ -316,6 +339,11 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemy3Dead()
 	return _textureEnemy3Dead;
 }
 
+LPDIRECT3DTEXTURE9 ResourceManager::GetTexturePlayerClimbThrow()
+{
+	return _texturePlayerClimbThrow;
+}
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdinUp() ////////////////
 {
 	return _textureAladdinUp;
@@ -324,6 +352,11 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdinUp() ////////////////
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureSpringItem() ////////////////
 {
 	return _textureSpringItem;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureClimbAttack() ////////////////
+{
+	return _textureClimbAttack;
 }
 
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies1()

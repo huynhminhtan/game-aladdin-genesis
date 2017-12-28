@@ -6,7 +6,7 @@
 Game::Game(LPCWSTR applicationName, float fps, bool isFullScreen)
 {
 	this->_applicationName = applicationName;
-	this->_fps = fps;
+	this->_fps = FPS;
 	this->_isFullScreen = isFullScreen;
 
 	this->_hInstance = GetModuleHandle(NULL);
@@ -83,7 +83,7 @@ bool Game::Initialize()
 	_oldTime = _gametime->getTotalGameTime();
 	_deltaTime = 0.0f;
 
-	this->_frameRate = 1000.0f / 60;
+	this->_frameRate = 1000.0f / FPS;
 
 	return true;
 }

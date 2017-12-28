@@ -26,6 +26,8 @@ private:
 	tinyxml2::XMLDocument *_animationXMLItemSpark;
 	tinyxml2::XMLDocument *_animationXMLEnemyDead;   ///////////////////////////
 	tinyxml2::XMLDocument *_animationXMLEnemy3Dead;
+	tinyxml2::XMLDocument *_animationXMLPlayerClimbThrow;
+	tinyxml2::XMLDocument *_animationXMLClimbAttack;
 	tinyxml2::XMLDocument *_animationXMLSpringItem;
 	tinyxml2::XMLDocument *_animationXMLAladdinUp;
 
@@ -43,6 +45,8 @@ private:
 	LPDIRECT3DTEXTURE9 _textureItemSpark;
 	LPDIRECT3DTEXTURE9 _textureEnemyDead;       //////////////////
 	LPDIRECT3DTEXTURE9 _textureEnemy3Dead;
+	LPDIRECT3DTEXTURE9 _texturePlayerClimbThrow;
+	LPDIRECT3DTEXTURE9 _textureClimbAttack;
 	LPDIRECT3DTEXTURE9 _textureSpringItem;
 	LPDIRECT3DTEXTURE9 _textureAladdinUp;
 
@@ -66,6 +70,8 @@ public:
 	
 	tinyxml2::XMLDocument* GetAnimationXMLEnemyDead();  ///////////////////////
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3Dead();
+	tinyxml2::XMLDocument* GetAnimationXMLPlayerClimbThrow();
+	tinyxml2::XMLDocument* GetAnimationXMLClimbAttack();
 	tinyxml2::XMLDocument* GetAnimationXMLSpringItem();
 	tinyxml2::XMLDocument* GetAnimationXMLAladdinUp();
 
@@ -94,6 +100,8 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureItemSpark();
 	LPDIRECT3DTEXTURE9 GetTextureEnemyDead(); /////////////////////////////
 	LPDIRECT3DTEXTURE9 GetTextureEnemy3Dead();
+	LPDIRECT3DTEXTURE9 GetTexturePlayerClimbThrow();
+	LPDIRECT3DTEXTURE9 GetTextureClimbAttack();
 	LPDIRECT3DTEXTURE9 GetTextureSpringItem();
 	LPDIRECT3DTEXTURE9 GetTextureAladdinUp();
 

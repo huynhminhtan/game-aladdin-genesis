@@ -80,7 +80,7 @@ Sprite::Sprite(LPDIRECT3DTEXTURE9 texture, bool isSourceRight, RECT sourceRect, 
 
 	//get size of LPDIRECT3DTEXTURE9
 	D3DSURFACE_DESC surfaceDesc;
-	_texture->GetLevelDesc(0, &surfaceDesc);
+	_texture->GetLevelDesc(0, &surfaceDesc);	
 	size_t size = surfaceDesc.Width * surfaceDesc.Height;
 
 	if (width == NULL)

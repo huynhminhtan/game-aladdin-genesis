@@ -14,7 +14,7 @@ PlayerClimbThrowState::PlayerClimbThrowState(Player * player, GameObject *ropeOr
 	_ropeOrHorizontalBar = ropeOrHorizontalBar;
 	_fromState = fromState;
 
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "climb_throw", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.7f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLPlayerClimbThrow(), "climb_throw", ResourceManager::GetInstance()->GetTexturePlayerClimbThrow(), true, 0.6f));
 
 	_isCreatedAppleWeapon = false;
 
@@ -23,6 +23,8 @@ PlayerClimbThrowState::PlayerClimbThrowState(Player * player, GameObject *ropeOr
 
 	_player->AllowMoveLeft(false);
 	_player->AllowMoveRight(false);
+
+	_checkPlussPosition = true;
 
 	//Sound::GetInstance()->Play("Low_Sword", 0, 1);
 }
@@ -36,13 +38,35 @@ void PlayerClimbThrowState::Update(float deltaTime)
 {
 	PlayerState::Update(deltaTime);
 
+	if (_checkPlussPosition )
+	{
+		if (_fromState == PlayerState::StateName::ClimbVertical)
+		{
+		  _player->SetPositionY(_player->GetPosition().y - 5);
+		}
+		
+		if (_fromState == PlayerState::StateName::ClimbHorizontalIde)
+		{
+			/*if (_player->GetState()->GetAnimation()->GetCurrentIndex() == 3)
+			{
+				_player->SetPositionY(_player->GetPosition().y - 5);
+			}*/
+		}
+
+		_checkPlussPosition = false;
+	}
+
 	if (!_isCreatedAppleWeapon && _animation->GetCurrentIndex() == 4)//create appleWeapon
 	{
 		_isCreatedAppleWeapon = true;
 		_player->SetNumAppleWeapon(_player->GetNumAppleWeapon() - 1);
 
+		_player->SetPositionY(_player->GetPosition().y + 10);
 		AppleWeapon *appleWeapon = new AppleWeapon();
-		appleWeapon->SetPosition(_player->GetPosition().x, _player->GetPosition().y);
+		if (_player->IsRight())
+			appleWeapon->SetPosition(_player->GetPosition().x + 10, _player->GetPosition().y);
+		else
+			appleWeapon->SetPosition(_player->GetPosition().x - 10, _player->GetPosition().y);
 
 		//set left or right for velocityX
 		appleWeapon->SetVelocityX(appleWeapon->GetVelocity().x * (_player->IsRight() ? 1 : -1));
@@ -62,4 +86,5 @@ void PlayerClimbThrowState::Update(float deltaTime)
 			_player->SetState(new PlayerClimbHorizontalIdleState(_player, _ropeOrHorizontalBar), false);
 		return;
 	}
+
 }
