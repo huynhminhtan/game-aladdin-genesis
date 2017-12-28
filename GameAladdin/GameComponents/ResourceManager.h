@@ -60,6 +60,7 @@ private:
 
 	//map 2 TEST
 	LPDIRECT3DTEXTURE9 _textureMapBoss;
+	LPDIRECT3DTEXTURE9 _textureMapBossBg;
 public:
 	ResourceManager();
 	~ResourceManager();
@@ -115,4 +116,5 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureExplosions();
 	LPDIRECT3DTEXTURE9 GetTextureBossJafar();
 	LPDIRECT3DTEXTURE9 GetTextureMapBoss();
+	LPDIRECT3DTEXTURE9 GetTextureMapBossBg();
 };

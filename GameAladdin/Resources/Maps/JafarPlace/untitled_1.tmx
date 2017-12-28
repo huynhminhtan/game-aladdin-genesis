@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="830" tileheight="450" nextobjectid="19">
+ <tileset firstgid="1" name="jafar" tilewidth="830" tileheight="450" tilecount="1" columns="1">
+  <image source="jafar.png" width="830" height="450"/>
+ </tileset>
+ <tileset firstgid="2" name="Player" tilewidth="37" tileheight="50" tilecount="1" columns="1">
+  <image source="demo_tmx/Player.png" width="37" height="50"/>
+ </tileset>
+ <tileset firstgid="3" name="Jafar" tilewidth="64" tileheight="71" tilecount="1" columns="1">
+  <image source="demo_tmx/Jafar.png" width="64" height="71"/>
+ </tileset>
+ <tileset firstgid="4" name="pillars" tilewidth="830" tileheight="450" tilecount="1" columns="1">
+  <image source="pillars.png" width="830" height="450"/>
+ </tileset>
+ <layer name="Tile Layer 2" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjYWBgAAAAFAAF
+  </data>
+ </layer>
+ <layer name="Tile Layer 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgAAAACAAC
+  </data>
+ </layer>
+ <objectgroup name="Player">
+  <object id="1" gid="2" x="60" y="232.167" width="37" height="50"/>
+ </objectgroup>
+ <objectgroup name="Ground">
+  <object id="2" x="3" y="357" width="823" height="56"/>
+  <object id="8" x="45" y="299.75" width="104.25" height="8.25"/>
+  <object id="9" x="256.875" y="300.625" width="104.25" height="8.25"/>
+  <object id="10" x="468.625" y="299.875" width="104.25" height="8.25"/>
+  <object id="11" x="681.125" y="300.625" width="104.25" height="8.25"/>
+ </objectgroup>
+ <objectgroup name="Jafar">
+  <object id="12" gid="3" x="384.667" y="351.333" width="64" height="71"/>
+ </objectgroup>
+ <objectgroup name="Wall">
+  <object id="4" x="1" y="-2" width="31" height="435"/>
+  <object id="6" x="797.5" y="2.5" width="31" height="435"/>
+  <object id="13" x="-2.66667" y="-36" width="830.667" height="33.3333"/>
+ </objectgroup>
+ <objectgroup name="WallPush">
+  <object id="16" x="6.66667" y="188" width="49.3333" height="222.667"/>
+  <object id="17" x="784" y="169.333" width="42.6667" height="249.333"/>
+ </objectgroup>
+</map>

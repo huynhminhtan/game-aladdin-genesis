@@ -98,7 +98,8 @@ ResourceManager::ResourceManager()
 	_textureAgrabahMarket = graphics->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
 
 	//man boss:
-	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/TestMap.png");
+	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/jafar.png");
+	_textureMapBossBg = graphics->LoadTexture(L"Resources/Maps/JafarPlace/pillars.png");
 
 	_animationXMLJafar = new tinyxml2::XMLDocument();
 	_animationXMLJafar->LoadFile("Resources/Enemies/Jafar-Animations.xml");
@@ -178,6 +179,7 @@ ResourceManager::~ResourceManager()
 	_textureBossJafar->Release();
 	_textureExplosions->Release();
 	_textureMapBoss->Release();
+	_textureMapBossBg->Release();
 }
 
 
@@ -406,4 +408,9 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureBossJafar()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBoss()
 {
 	return _textureMapBoss;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBossBg()
+{
+	return _textureMapBossBg;
 }

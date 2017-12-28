@@ -37,18 +37,16 @@ JafarScene::~JafarScene()
 void JafarScene::LoadContent()
 {
 	Sprite* sprite;
-	RECT sourceRect;
 
-	sourceRect.left = 0;
-	sourceRect.right = 1259;
-	sourceRect.top = 0;
-	sourceRect.bottom = 563;
-
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true, sourceRect);
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	_gameMap = new GameMap("Resources/Maps/JafarPlace/MapBoss.tmx", _quadTree);
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBossBg(), true);
+	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
+	_backgroundTextures.push_back(sprite);
+
+	_gameMap = new GameMap("Resources/Maps/JafarPlace/untitled_1.tmx", _quadTree);
 	_camera = new Camera(_gameMap->GetPlayer());
 
 	//apple weapon counter
@@ -96,6 +94,7 @@ void JafarScene::Update(float deltatime)
 
 void JafarScene::Draw()
 {
+	_backgroundTextures[1]->Draw(_camera);
 	_backgroundTextures[0]->Draw(_camera);
 	Scene::Draw();
 
