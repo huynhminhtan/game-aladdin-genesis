@@ -129,7 +129,13 @@ ResourceManager::ResourceManager()
 
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Snake.wav", "Jafar_Snake");//Jafar chuyen dang Snake
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Laugh.wav", "Jafar_Laugh");
+
 	Sound::GetInstance()->LoadSound("Resources/Sounds/PrinceAli.wav", "PrinceAli");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/BossTune.wav", "BossTune");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/LevelComplete.wav", "LevelComplete");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_Background.wav", "MenuSelect_Background");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_SelectChange.wav", "MenuSelect_SelectChange");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/MenuSelect_Selected.wav", "MenuSelect_Selected");
 }
 
 
